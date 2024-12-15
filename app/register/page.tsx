@@ -3,6 +3,7 @@
 import { MoveRight, User } from "lucide-react";
 import { Button, Select, SelectItem } from "@nextui-org/react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const roles = [
     { key: "student", label: "Student" },
@@ -13,12 +14,14 @@ export const roles = [
 export default function Singup() {
     const [value, setValue] = useState<string | undefined>();
     const [isInvalid, setIsInvalid] = useState(false);
+    const router = useRouter();
 
     function handleRegistrationRole() {
         if (!value || roles.map((r) => r.key).every((k) => k != value)) {
             setIsInvalid(true);
             return;
         }
+        router.push(`/register/${value}`);
         setIsInvalid(false);
     }
 
