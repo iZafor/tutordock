@@ -63,7 +63,9 @@ export default function StudentRegistrationForm() {
             <Card className="min-w-[600px] px-8 py-4 space-y-4">
                 <div className="text-center">
                     <h2 className="text-2xl font-bold">Student Registration</h2>
-                    <p className="text-gray-600 mt-2">Please fill in your information to register</p>
+                    <p className="text-gray-600 mt-2">
+                        Please fill in your information to register
+                    </p>
                 </div>
                 <Form
                     className="w-full justify-center items-center animate-appearance-in"
@@ -73,6 +75,7 @@ export default function StudentRegistrationForm() {
                 >
                     <div className="w-full flex justify-between gap-2">
                         <Input
+                            variant="bordered"
                             isRequired
                             label="First Name"
                             placeholder="Enter your first name"
@@ -85,6 +88,7 @@ export default function StudentRegistrationForm() {
                             }}
                         />
                         <Input
+                            variant="bordered"
                             isRequired
                             label="Last Name"
                             placeholder="Enter your last name"
@@ -98,6 +102,7 @@ export default function StudentRegistrationForm() {
                         />
                     </div>
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Email"
                         type="email"
@@ -111,6 +116,7 @@ export default function StudentRegistrationForm() {
                         }}
                     />
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Password"
                         type="password"
@@ -122,24 +128,28 @@ export default function StudentRegistrationForm() {
                         onValueChange={setPassword}
                     />
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Phone Number"
                         placeholder="Enter your phone number"
                         labelPlacement="outside"
                     />
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Address"
                         placeholder="Enter your current address"
                         labelPlacement="outside"
                     />
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Grade"
                         placeholder="e.g., Class 6, HSC"
                         labelPlacement="outside"
                     />
                     <Input
+                        variant="bordered"
                         label="Institution"
                         placeholder="Enter your institution"
                         labelPlacement="outside"

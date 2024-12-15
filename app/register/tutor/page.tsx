@@ -122,6 +122,7 @@ export default function TutorRegistrationForm() {
                             <div className="w-full flex flex-col gap-4">
                                 <div className="flex justify-between gap-2">
                                     <Input
+                                        variant="bordered"
                                         isRequired
                                         label="First Name"
                                         placeholder="Enter your first name"
@@ -138,6 +139,7 @@ export default function TutorRegistrationForm() {
                                         }}
                                     />
                                     <Input
+                                        variant="bordered"
                                         isRequired
                                         label="Last Name"
                                         placeholder="Enter your last name"
@@ -155,6 +157,7 @@ export default function TutorRegistrationForm() {
                                     />
                                 </div>
                                 <Input
+                                    variant="bordered"
                                     isRequired
                                     label="Email"
                                     type="email"
@@ -168,6 +171,7 @@ export default function TutorRegistrationForm() {
                                     }}
                                 />
                                 <Input
+                                    variant="bordered"
                                     isRequired
                                     label="Password"
                                     type="password"
@@ -181,12 +185,14 @@ export default function TutorRegistrationForm() {
                                     onValueChange={setPassword}
                                 />
                                 <Input
+                                    variant="bordered"
                                     isRequired
                                     label="Phone Number"
                                     placeholder="Enter your phone number"
                                     labelPlacement="outside"
                                 />
                                 <Input
+                                    variant="bordered"
                                     isRequired
                                     label="Address"
                                     placeholder="Enter your current address"
@@ -203,6 +209,7 @@ export default function TutorRegistrationForm() {
                             </h3>
                             <div className="w-full flex flex-col gap-4">
                                 <Select
+                                    variant="bordered"
                                     isRequired
                                     label="Highest Degree"
                                     labelPlacement="outside"
@@ -213,17 +220,20 @@ export default function TutorRegistrationForm() {
                                     ))}
                                 </Select>
                                 <Input
+                                    variant="bordered"
                                     label="Field of Specialization"
                                     placeholder="e.g., Mathematics, Physics, Literature"
                                     labelPlacement="outside"
                                 />
                                 <Input
+                                    variant="bordered"
                                     isRequired
                                     label="University/Institution"
                                     placeholder="Enter name of your institution"
                                     labelPlacement="outside"
                                 />
                                 <Input
+                                    variant="bordered"
                                     type="file"
                                     label="Additional Certifications"
                                     labelPlacement="outside"
@@ -239,6 +249,7 @@ export default function TutorRegistrationForm() {
                             </h3>
                             <div className="w-full flex flex-col gap-4">
                                 <Select
+                                    variant="bordered"
                                     isRequired
                                     label="Years of Teaching Experience"
                                     labelPlacement="outside"
@@ -249,6 +260,7 @@ export default function TutorRegistrationForm() {
                                     ))}
                                 </Select>
                                 <Input
+                                    variant="bordered"
                                     isRequired
                                     label="Subjects You can Teach"
                                     placeholder="e.g., Mathematics, Physics, Literature"

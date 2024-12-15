@@ -64,7 +64,8 @@ export default function ParentRegistrationForm() {
                 <div className="text-center">
                     <h2 className="text-2xl font-bold">Parent Registration</h2>
                     <p className="text-gray-600 mt-2">
-                        Find the best home tutor for your child
+                        Create an account and start managing your child's
+                        activities
                     </p>
                 </div>
                 <Form
@@ -75,6 +76,7 @@ export default function ParentRegistrationForm() {
                 >
                     <div className="w-full flex justify-between gap-2">
                         <Input
+                            variant="bordered"
                             isRequired
                             label="First Name"
                             placeholder="Enter your first name"
@@ -87,6 +89,7 @@ export default function ParentRegistrationForm() {
                             }}
                         />
                         <Input
+                            variant="bordered"
                             isRequired
                             label="Last Name"
                             placeholder="Enter your last name"
@@ -100,6 +103,7 @@ export default function ParentRegistrationForm() {
                         />
                     </div>
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Email"
                         type="email"
@@ -113,6 +117,7 @@ export default function ParentRegistrationForm() {
                         }}
                     />
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Password"
                         type="password"
@@ -124,18 +129,21 @@ export default function ParentRegistrationForm() {
                         onValueChange={setPassword}
                     />
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Phone Number"
                         placeholder="Enter your phone number"
                         labelPlacement="outside"
                     />
                     <Input
+                        variant="bordered"
                         isRequired
                         label="Address"
                         placeholder="Enter your current address"
                         labelPlacement="outside"
                     />
                     <Input
+                        variant="bordered"
                         label="Occupation"
                         placeholder="Enter your occupation"
                         labelPlacement="outside"
