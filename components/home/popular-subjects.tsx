@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Button } from "@nextui-org/button";
+import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
 const subjects = [
@@ -37,7 +37,7 @@ export default function PopularSubjects({ className }: { className?: string }) {
                 {subjects.map((subject, index) => (
                     <div key={index} className="relative group">
                         <Button
-                            variant="bordered"
+                            variant="outline"
                             className={`w-full justify-between ${getBackgroundColor(
                                 subject.popularity
                             )} 
@@ -66,7 +66,7 @@ export default function PopularSubjects({ className }: { className?: string }) {
                             </div>
                         </Button>
                         <div
-                            className="absolute -top-2 -right-2 bg-primary text-white text-xs px-2 py-1 rounded-full opacity-0 
+                            className="absolute -top-2 -right-2 bg-primary text-background text-xs px-2 py-1 rounded-full opacity-0 
                         group-hover:opacity-100 transition-opacity duration-200"
                         >
                             {subject.popularity}% popular

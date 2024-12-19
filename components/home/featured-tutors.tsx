@@ -1,9 +1,14 @@
 import { cn } from "@/lib/utils";
-import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { Badge } from "@nextui-org/badge";
+import { Button } from "@/components/ui/button";
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardContent,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Star, Clock, GraduationCap } from "lucide-react";
-import { Avatar } from "@nextui-org/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const tutors = [
     {
@@ -76,12 +81,16 @@ export default function FeaturedTutors({ className }: { className?: string }) {
                             className="group hover:shadow-lg transition-shadow duration-300"
                         >
                             <CardHeader className="space-y-4">
-                                <div className="flex items-center space-x-4">
-                                    <Avatar
-                                        showFallback
-                                        className="h-12 w-12"
-                                        src={tutor.avatar}
-                                    />
+                                <CardTitle className="flex items-center space-x-4">
+                                    <Avatar>
+                                        <AvatarImage
+                                            src="https://github.com/shadcn.png"
+                                            alt="@shadcn"
+                                        />
+                                        <AvatarFallback>
+                                            {tutor.name}
+                                        </AvatarFallback>
+                                    </Avatar>
                                     <div>
                                         <h3 className="font-semibold">
                                             {tutor.name}
@@ -95,15 +104,13 @@ export default function FeaturedTutors({ className }: { className?: string }) {
                                             </span>
                                         </div>
                                     </div>
-                                </div>
+                                </CardTitle>
                             </CardHeader>
 
-                            <CardBody className="space-y-4">
+                            <CardContent className="space-y-4">
                                 <div className="flex flex-wrap gap-2">
                                     {tutor.subjects.map((subject, idx) => (
-                                        <Badge key={idx} variant="solid">
-                                            {subject}
-                                        </Badge>
+                                        <Badge key={idx}>{subject}</Badge>
                                     ))}
                                 </div>
 
@@ -126,11 +133,11 @@ export default function FeaturedTutors({ className }: { className?: string }) {
 
                                 <Button
                                     className="w-full mt-4"
-                                    variant="bordered"
+                                    variant="outline"
                                 >
                                     View Profile
                                 </Button>
-                            </CardBody>
+                            </CardContent>
                         </Card>
                     ))}
                 </div>

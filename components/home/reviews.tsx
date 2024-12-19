@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Card } from "@nextui-org/card";
 import Marquee from "@/components/ui/marquee";
 import ReviewCard from "./review-card";
 
@@ -54,7 +53,7 @@ export default function Reviews({ className }: { className?: string }) {
             <p className="text-gray-400 text-center mb-8">
                 Join thousands of satisfied parents and students
             </p>
-            <Card className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background border-2 border-default">
+            <div className="relative flex py-6 w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
                 <Marquee pauseOnHover className="[--duration:20s]">
                     {firstRow.map((review) => (
                         <ReviewCard key={review.username} {...review} />
@@ -65,7 +64,9 @@ export default function Reviews({ className }: { className?: string }) {
                         <ReviewCard key={review.username} {...review} />
                     ))}
                 </Marquee>
-            </Card>
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+            </div>
         </div>
     );
 }

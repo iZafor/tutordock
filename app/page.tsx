@@ -4,7 +4,6 @@ import Footer from "@/components/home/footer";
 import Reviews from "@/components/home/reviews";
 import PopularSubjects from "@/components/home/popular-subjects";
 import Hero from "@/components/home/hero";
-import HomeNavbar from "@/components/home/home-navbar";
 import FeaturedTutors from "@/components/home/featured-tutors";
 
 export default function Home() {
@@ -20,8 +19,6 @@ export default function Home() {
                     "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
                 )}
             />
-
-            <HomeNavbar />
 
             <Hero className="px-20" />
 

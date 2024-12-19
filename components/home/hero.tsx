@@ -1,8 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@nextui-org/button";
-import { Card } from "@nextui-org/card";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { ArrowRight, Calendar, Search, Shield } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -22,14 +22,14 @@ export default function Hero({ className }: { className?: string }) {
                     Connect with qualified and experienced tutors who come to
                     your home. Personalized learning, guaranteed results.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex items-center gap-4">
                     <Button size="lg">
                         Find a Tutor <ArrowRight />
                     </Button>
                     <Button
                         size="lg"
-                        variant="bordered"
-                        onPress={() => router.push("/register/tutor")}
+                        variant="outline"
+                        onClick={() => router.push("/signup/tutor")}
                     >
                         Become a Tutor
                     </Button>
