@@ -12,24 +12,22 @@ export default function Navbar({ className }: { className?: string }) {
     const pathname = usePathname();
 
     return (
-        <nav
-            className={cn(
-                "border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex items-center justify-between py-4 px-20",
-                className
-            )}
-        >
-            <Link href="/" className="flex items-center gap-4">
-                <BookOpenIcon className="size-8" />
-                <h2 className="text-xl font-semibold">TutorDock</h2>
-            </Link>
-            <div className="flex items-center gap-4">
-                {(pathname === "/" || pathname.includes("/signup/")) && (
-                    <>
-                        <NavbarLoginButton />
-                        <NavbarSignupButton />
-                    </>
+        (pathname === "/" || pathname.includes("/signup/")) && (
+            <nav
+                className={cn(
+                    "border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex items-center justify-between py-4 px-20",
+                    className
                 )}
-            </div>
-        </nav>
+            >
+                <Link href="/" className="flex items-center gap-4">
+                    <BookOpenIcon className="size-8" />
+                    <h2 className="text-xl font-semibold">TutorDock</h2>
+                </Link>
+                <div className="flex items-center gap-4">
+                    <NavbarLoginButton />
+                    <NavbarSignupButton />
+                </div>
+            </nav>
+        )
     );
 }
