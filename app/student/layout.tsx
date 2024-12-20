@@ -75,7 +75,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                     >
                                         <Avatar>
                                             <AvatarImage src="https://github.com/shadcn.png" />
-                                            <AvatarFallback>CN</AvatarFallback>
+                                            <AvatarFallback>BG</AvatarFallback>
                                         </Avatar>
                                         <div>
                                             <h3 className="font-semibold">
@@ -105,7 +105,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </SidebarMenu>
                 </SidebarFooter>
             </Sidebar>
-            <main>
+            <main className="w-full">
                 <SidebarTrigger />
                 {children}
             </main>
