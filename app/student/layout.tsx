@@ -18,7 +18,13 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BookMarked, ChevronsUpDown, Home, LineChart } from "lucide-react";
+import {
+    BookMarked,
+    ChevronsUpDown,
+    ClipboardList,
+    Home,
+    LineChart,
+} from "lucide-react";
 import Link from "next/link";
 
 const ROUTE_ROOT = "/student";
@@ -33,6 +39,11 @@ const items = [
         title: "My Tuitions",
         url: ROUTE_ROOT + "/tuitions",
         icon: BookMarked,
+    },
+    {
+        title: "Manage Tuition Offers",
+        url: ROUTE_ROOT + "/manage-tuition-offers",
+        icon: ClipboardList,
     },
     {
         title: "Progress",
