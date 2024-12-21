@@ -20,16 +20,15 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import {
-    Filter,
     Plus,
     Eye,
-    Edit,
     Trash2,
     Monitor,
     CheckCircle2,
     XCircle,
     Clock4,
     Clock,
+    Ellipsis,
 } from "lucide-react";
 import {
     DropdownMenu,
@@ -43,20 +42,12 @@ interface TuitionOffer {
     offerId: string;
     budget: {
         amount: number;
-        currency: string;
         rateType: "hourly" | "monthly" | "fixed";
     };
-    timings: {
-        startDate: string;
-        duration: string;
-        frequency: string;
-        preferredTime: string;
-    };
-    subject: string;
+    startDate: string;
+    subjects: string[];
     mode: "online" | "in-person" | "hybrid";
     status: "pending" | "accepted" | "rejected" | "expired";
-    createdAt: string;
-    studentName: string;
 }
 
 const offers: TuitionOffer[] = [
@@ -64,39 +55,23 @@ const offers: TuitionOffer[] = [
         offerId: "TO-2024-001",
         budget: {
             amount: 50,
-            currency: "USD",
             rateType: "hourly",
         },
-        timings: {
-            startDate: "2024-01-15",
-            duration: "3 months",
-            frequency: "2 times/week",
-            preferredTime: "Evening",
-        },
-        subject: "Mathematics",
+        startDate: "2024-01-15",
+        subjects: ["Mathematics", "Physics"],
         mode: "online",
         status: "pending",
-        createdAt: "2024-01-10",
-        studentName: "John Smith",
     },
     {
         offerId: "TO-2024-002",
         budget: {
             amount: 400,
-            currency: "USD",
             rateType: "monthly",
         },
-        timings: {
-            startDate: "2024-01-20",
-            duration: "6 months",
-            frequency: "3 times/week",
-            preferredTime: "Afternoon",
-        },
-        subject: "Physics",
+        startDate: "2024-01-20",
+        subjects: ["Physics", "Bangla Literature"],
         mode: "hybrid",
         status: "accepted",
-        createdAt: "2024-01-12",
-        studentName: "Emma Wilson",
     },
 ];
 
@@ -198,12 +173,11 @@ export default function ManageTuitionOffers() {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Student</TableHead>
                             <TableHead>Subject</TableHead>
                             <TableHead>Budget</TableHead>
                             <TableHead>Mode</TableHead>
                             <TableHead>Status</TableHead>
-                            <TableHead>Created</TableHead>
+                            <TableHead>Start Date</TableHead>
                             <TableHead className="text-right">
                                 Actions
                             </TableHead>
@@ -212,11 +186,11 @@ export default function ManageTuitionOffers() {
                     <TableBody>
                         {offers.map((offer) => (
                             <TableRow key={offer.offerId}>
-                                <TableCell>{offer.studentName}</TableCell>
-                                <TableCell>{offer.subject}</TableCell>
                                 <TableCell>
-                                    {offer.budget.currency}{" "}
-                                    {offer.budget.amount}/
+                                    {offer.subjects.join(", ")}
+                                </TableCell>
+                                <TableCell>
+                                    BDT {offer.budget.amount}/
                                     {offer.budget.rateType}
                                 </TableCell>
                                 <TableCell>
@@ -242,24 +216,20 @@ export default function ManageTuitionOffers() {
                                 </TableCell>
                                 <TableCell>
                                     {new Date(
-                                        offer.createdAt
+                                        offer.startDate
                                     ).toLocaleDateString()}
                                 </TableCell>
                                 <TableCell className="text-right">
                                     <DropdownMenu>
                                         <DropdownMenuTrigger asChild>
                                             <Button variant="ghost" size="icon">
-                                                <Filter className="h-4 w-4" />
+                                                <Ellipsis className="h-4 w-4" />
                                             </Button>
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent align="end">
                                             <DropdownMenuItem>
                                                 <Eye className="mr-2 h-4 w-4" />
                                                 View Details
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem>
-                                                <Edit className="mr-2 h-4 w-4" />
-                                                Edit Offer
                                             </DropdownMenuItem>
                                             <DropdownMenuItem className="text-destructive">
                                                 <Trash2 className="mr-2 h-4 w-4" />
