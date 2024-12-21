@@ -36,7 +36,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface TuitionOffer {
     offerId: string;
@@ -106,6 +106,7 @@ const getStatusIcon = (status: string) => {
 };
 
 export default function ManageTuitionOffers() {
+    const pathname = usePathname();
     const router = useRouter();
 
     return (
@@ -113,9 +114,7 @@ export default function ManageTuitionOffers() {
             <div className="flex justify-end items-center">
                 <Button
                     onClick={() =>
-                        router.push(
-                            "/student/manage-tuition-offers/create-tuition-offer"
-                        )
+                        router.push(pathname + "/create-tuition-offer")
                     }
                 >
                     <Plus className="mr-2 h-4 w-4" />
@@ -227,7 +226,14 @@ export default function ManageTuitionOffers() {
                                             </Button>
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent align="end">
-                                            <DropdownMenuItem>
+                                            <DropdownMenuItem
+                                                onClick={() =>
+                                                    router.push(
+                                                        pathname +
+                                                            "/offer-details"
+                                                    )
+                                                }
+                                            >
                                                 <Eye className="mr-2 h-4 w-4" />
                                                 View Details
                                             </DropdownMenuItem>
