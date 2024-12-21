@@ -1,3 +1,5 @@
+"use client";
+
 import {
     SidebarGroupContent,
     SidebarMenu,
@@ -10,6 +12,9 @@ import {
     SidebarFooter,
     SidebarGroup,
     SidebarHeader,
+    SidebarMenuSubItem,
+    SidebarMenuSubButton,
+    SidebarMenuSub,
 } from "@/components/ui/sidebar";
 import {
     DropdownMenu,
@@ -20,12 +25,20 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
     BookMarked,
+    ChevronRight,
     ChevronsUpDown,
     ClipboardList,
+    ClipboardPlus,
     Home,
     LineChart,
 } from "lucide-react";
 import Link from "next/link";
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { useState } from "react";
 
 const ROUTE_ROOT = "/student";
 
@@ -44,6 +57,16 @@ const items = [
         title: "Manage Tuition Offers",
         url: ROUTE_ROOT + "/manage-tuition-offers",
         icon: ClipboardList,
+        subMenu: [
+            {
+                title: "Create Tuition Offers",
+                url:
+                    ROUTE_ROOT +
+                    "/manage-tuition-offers" +
+                    "/create-tuition-offer",
+                icon: ClipboardPlus,
+            },
+        ],
     },
     {
         title: "Progress",
@@ -60,18 +83,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <SidebarContent>
                     <SidebarGroup>
                         <SidebarGroupContent>
-                            <SidebarMenu>
-                                {items.map((item) => (
-                                    <SidebarMenuItem key={item.title}>
-                                        <SidebarMenuButton asChild>
-                                            <Link href={item.url}>
-                                                <item.icon />
-                                                <span>{item.title}</span>
-                                            </Link>
-                                        </SidebarMenuButton>
-                                    </SidebarMenuItem>
-                                ))}
-                            </SidebarMenu>
+                            {items.map((item) => (
+                                <CollapsibleMenuItem
+                                    key={item.title + "-c"}
+                                    item={item}
+                                />
+                            ))}
                         </SidebarGroupContent>
                     </SidebarGroup>
                 </SidebarContent>
@@ -121,5 +138,53 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {children}
             </main>
         </SidebarProvider>
+    );
+}
+
+function CollapsibleMenuItem({ item }: { item: (typeof items)[0] }) {
+    const [isOpen, setIsOpen] = useState(true);
+
+    return (
+        <SidebarMenu title={item.title}>
+            <Collapsible
+                open={isOpen}
+                onOpenChange={setIsOpen}
+                className="group/collapsible"
+            >
+                <SidebarMenuItem>
+                    <CollapsibleTrigger asChild>
+                        <SidebarMenuButton asChild>
+                            <Link href={item.url}>
+                                <item.icon />
+                                <span>{item.title}</span>
+                                {item.subMenu && (
+                                    <ChevronRight
+                                        className={`mx-auto mr-0 transition-transform duration-200 ${
+                                            isOpen ? "rotate-90" : ""
+                                        }`}
+                                    />
+                                )}
+                            </Link>
+                        </SidebarMenuButton>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                        {item.subMenu && (
+                            <SidebarMenuSub>
+                                {item.subMenu.map((sub) => (
+                                    <SidebarMenuSubItem key={sub.title}>
+                                        <SidebarMenuSubButton asChild>
+                                            <Link href={sub.url}>
+                                                <sub.icon />
+                                                <span>{sub.title}</span>
+                                            </Link>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                ))}
+                            </SidebarMenuSub>
+                        )}
+                    </CollapsibleContent>
+                </SidebarMenuItem>
+            </Collapsible>
+        </SidebarMenu>
     );
 }
