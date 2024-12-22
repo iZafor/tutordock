@@ -16,12 +16,8 @@ const ROUTE_ROOT = "/student";
 
 const routes = [
     {
-        title: "Dashboard",
-        url: ROUTE_ROOT,
-    },
-    {
         title: "My Tuitions",
-        url: ROUTE_ROOT + "/tuitions",
+        url: ROUTE_ROOT + "/my-tuitions",
     },
     {
         title: "Tuition Offer",
@@ -51,7 +47,7 @@ const routes = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="space-y-4">
+        <div className="space-y-6">
             <Navbar className="px-[4rem]">
                 <div className="flex gap-4">
                     {routes.map((item) => (

@@ -3,9 +3,6 @@ import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
-    CardHeader,
-    CardTitle,
-    CardDescription,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -112,15 +109,6 @@ const completedTuitions = [
 export default function MyTuitions() {
     return (
         <div className="flex-1 space-y-6">
-            <div className="flex justify-between items-center">
-                <div>
-                    <h1 className="text-3xl font-bold">My Tuitions</h1>
-                    <p className="text-muted-foreground">
-                        Manage your tuition sessions
-                    </p>
-                </div>
-            </div>
-
             <div className="flex gap-4 flex-wrap">
                 <div className="flex-1 min-w-[200px]">
                     <Input

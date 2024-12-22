@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const subPaths = paths.slice(2);
 
     return (
-        <div>
+        <span>
             <Breadcrumb className="mb-4">
                 <BreadcrumbList>
                     {subPaths.slice(0, subPaths.length - 1).map((p, idx) => (
@@ -43,6 +43,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </BreadcrumbList>
             </Breadcrumb>
             {children}
-        </div>
+        </span>
     );
 }

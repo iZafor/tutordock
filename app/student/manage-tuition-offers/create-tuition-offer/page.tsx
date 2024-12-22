@@ -110,15 +110,15 @@ export default function CreateTuitionOffer({
 
     return (
         <Card>
-            <CardContent className="flex justify-center py-4">
+            <CardContent className="flex justify-center py-6">
                 <Card className="w-[40%]">
-                    <CardContent className="py-4">
+                    <CardContent className="py-6">
                         <Form {...form}>
                             <form
                                 onSubmit={form.handleSubmit(onSubmit)}
                                 className="space-y-6"
                             >
-                                <div className="space-y-4">
+                                <div className="space-y-6">
                                     <div className="flex items-center justify-between">
                                         <FormLabel>Subjects</FormLabel>
                                         <Button
