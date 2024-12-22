@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { usePathname } from "next/navigation";
 import { slugToTitleCase } from "@/lib/utils";
+import { Slash } from "lucide-react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
@@ -19,24 +20,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const subPaths = paths.slice(2);
 
     return (
-        <div className="p-8">
+        <div>
             <Breadcrumb className="mb-4">
                 <BreadcrumbList>
                     {subPaths.slice(0, subPaths.length - 1).map((p, idx) => (
                         <span key={p + idx} className="flex items-center gap-2">
                             <BreadcrumbItem>
-                                <BreadcrumbLink
-                                    href={subPathRoot + "/" + p}
-                                    className="text-lg"
-                                >
+                                <BreadcrumbLink href={subPathRoot + "/" + p}>
                                     {slugToTitleCase(p)}
                                 </BreadcrumbLink>
                             </BreadcrumbItem>
-                            <BreadcrumbSeparator />
+                            <BreadcrumbSeparator>
+                                <Slash />
+                            </BreadcrumbSeparator>
                         </span>
                     ))}
                     <BreadcrumbItem>
-                        <BreadcrumbPage className="text-lg">
+                        <BreadcrumbPage>
                             {slugToTitleCase(subPaths[subPaths.length - 1])}
                         </BreadcrumbPage>
                     </BreadcrumbItem>

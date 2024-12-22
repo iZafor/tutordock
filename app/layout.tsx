@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/ui/navbar";
+import HomeNavbar from "@/components/home/home-navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = localFont({
@@ -35,7 +35,7 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <Navbar />
+                    <HomeNavbar />
                     {children}
                 </ThemeProvider>
             </body>
