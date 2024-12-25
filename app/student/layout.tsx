@@ -47,7 +47,7 @@ const routes = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="space-y-6">
+        <span>
             <Navbar className="px-[4rem]">
                 <div className="flex gap-4">
                     {routes.map((item) => (
@@ -99,6 +99,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
             </Navbar>
             <div className="px-20">{children}</div>
-        </div>
+        </span>
     );
 }

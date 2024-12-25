@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, XAxis, CartesianGrid, YAxis } from "recharts";
 import { BookOpen, Clock, Trophy, Calendar, Star } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { format } from "date-fns";
 
 const chartConfig = {
     desktop: {
@@ -29,12 +30,12 @@ const performanceData = [
 
 export default function StudentProgress() {
     return (
-        <div className="w-full space-y-6">
+        <div className="w-full space-y-6 mt-6">
             <div className="flex items-center justify-between">
                 <h1 className="text-2xl font-bold">Learning Progress</h1>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4" />
-                    Last updated: {new Date().toLocaleDateString()}
+                    Last updated: {format(new Date(), "PPP")}
                 </div>
             </div>
 

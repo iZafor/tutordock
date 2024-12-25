@@ -17,7 +17,7 @@ export default function MyTuitions() {
     const [value, setValue] = useState("all");
 
     return (
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-6 mt-6">
             <div className="flex gap-4 flex-wrap">
                 <div className="flex-1 min-w-[200px]">
                     <Input
