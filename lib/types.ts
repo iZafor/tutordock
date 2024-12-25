@@ -58,3 +58,22 @@ export interface TuitionDetails {
     to: string;
     duration: string;
 }
+
+export interface Schedule {
+    weekdays: string[];
+    startTime: string;
+    endTime: string;
+}
+
+export interface TuitionOffer {
+    offerId: string;
+    budget: {
+        amount: number;
+        rateType: "hour" | "month" | "week";
+    };
+    startDate: string;
+    subjects: string[];
+    schedule: Schedule;
+    mode: "online" | "in-person" | "hybrid";
+    status: "pending" | "accepted" | "rejected" | "expired";
+}

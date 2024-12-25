@@ -1,4 +1,4 @@
-import { Tuition, TuitionDetails } from "./types";
+import { Tuition, TuitionDetails, TuitionOffer } from "./types";
 
 export const tuitionMockData: Tuition[] = [
     {
@@ -430,5 +430,40 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
         from: "4:00 PM",
         to: "6:00 PM",
         duration: "2 hours",
+    },
+];
+
+export const tuitionOfferMockData: TuitionOffer[] = [
+    {
+        offerId: "TO-2024-001",
+        budget: {
+            amount: 50,
+            rateType: "hour",
+        },
+        startDate: "2025-01-15",
+        subjects: ["Mathematics", "Physics"],
+        schedule: {
+            weekdays: ["Monday", "Wednesday", "Friday"],
+            startTime: "10:00",
+            endTime: "12:00",
+        },
+        mode: "online",
+        status: "pending",
+    },
+    {
+        offerId: "TO-2024-002",
+        budget: {
+            amount: 400,
+            rateType: "month",
+        },
+        startDate: "2025-01-20",
+        subjects: ["Physics", "Bangla Literature"],
+        schedule: {
+            weekdays: ["Tuesday", "Thursday"],
+            startTime: "14:00",
+            endTime: "16:00",
+        },
+        mode: "hybrid",
+        status: "accepted",
     },
 ];
