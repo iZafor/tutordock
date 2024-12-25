@@ -38,8 +38,8 @@ export default function TuitionCard({ tuition }: { tuition: Tuition }) {
     return (
         <Card className="w-full hover:shadow-lg transition-shadow duration-200">
             <CardHeader className="pb-4">
-                <div className="flex items-start justify-between">
-                    <div className="space-y-3">
+                <div className="space-y-3">
+                    <div className="flex justify-between items-center">
                         <div className="flex items-center space-x-2">
                             <BookOpen className="h-5 w-5 text-primary" />
                             <h3 className="font-semibold text-lg">
@@ -52,24 +52,42 @@ export default function TuitionCard({ tuition }: { tuition: Tuition }) {
                                           .join(", ")}
                             </h3>
                         </div>
-                        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                            <GraduationCap className="h-4 w-4" />
-                            <span>{tuition.tutor}</span>
+                        <div className="flex gap-2">
+                            <Badge
+                                variant={isCompleted ? "success" : "secondary"}
+                            >
+                                {isCompleted ? "Completed" : "In Progress"}
+                            </Badge>
+                            <Button
+                                variant="outline"
+                                size="icon"
+                                onClick={() =>
+                                    router.push(`${pathname}/${tuition.id}`)
+                                }
+                            >
+                                <ExternalLink />
+                            </Button>
                         </div>
                     </div>
-                    <div className="flex gap-2">
-                        <Badge variant={isCompleted ? "success" : "secondary"}>
-                            {isCompleted ? "Completed" : "In Progress"}
-                        </Badge>
-                        <Button
-                            variant="outline"
-                            size="icon"
-                            onClick={() =>
-                                router.push(`${pathname}/${tuition.id}`)
-                            }
-                        >
-                            <ExternalLink />
-                        </Button>
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                        <GraduationCap className="h-4 w-4" />
+                        <span>{tuition.tutor}</span>
+                    </div>
+                    <div className="w-full flex items-center justify-between gap-4 text-sm">
+                        <div className="flex items-center space-x-2 text-muted-foreground">
+                            <Calendar className="h-4 w-4" />
+                            <span>
+                                Next:{" "}
+                                {getNextClassDateText(tuition.sessionDays)}
+                            </span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-muted-foreground">
+                            <Clock className="h-4 w-4" />
+                            <span>
+                                {tuition.duration +
+                                    `(${tuition.from} to ${tuition.to})`}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </CardHeader>
@@ -121,21 +139,6 @@ export default function TuitionCard({ tuition }: { tuition: Tuition }) {
                                 </div>
                             </div>
                         ))}
-                    </div>
-                </div>
-
-                <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center gap-4">
-                        <div className="flex items-center space-x-2 text-muted-foreground">
-                            <Calendar className="h-4 w-4" />
-                            <span>
-                                {getNextClassDateText(tuition.sessionDays)}
-                            </span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-muted-foreground">
-                            <Clock className="h-4 w-4" />
-                            <span>{tuition.duration}</span>
-                        </div>
                     </div>
                 </div>
             </CardContent>

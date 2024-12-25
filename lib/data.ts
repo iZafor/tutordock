@@ -19,6 +19,8 @@ export const tuitionMockData: Tuition[] = [
         totalTasks: 20,
         completedTasks: 15,
         sessionDays: ["Monday", "Wednesday"],
+        from: "10:00 AM",
+        to: "12:00 PM",
         duration: "2 hours",
     },
     {
@@ -39,6 +41,8 @@ export const tuitionMockData: Tuition[] = [
         totalTasks: 15,
         completedTasks: 8,
         sessionDays: ["Sunday", "Tuesday"],
+        from: "1:00 PM",
+        to: "2:30 PM",
         duration: "1.5 hours",
     },
     {
@@ -64,6 +68,8 @@ export const tuitionMockData: Tuition[] = [
         totalTasks: 18,
         completedTasks: 18,
         sessionDays: ["Friday", "Saturday"],
+        from: "4:00 PM",
+        to: "6:00 PM",
         duration: "2 hours",
     },
 ];
@@ -174,12 +180,14 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                 ],
             },
         ],
-        instructor: {
+        tutor: {
             name: "Dr. Smith",
             bio: "PhD in Applied Mathematics with 10+ years of teaching experience. Specializes in making complex concepts accessible to students.",
             avatar: "/avatars/dr-smith.jpg",
         },
         sessionDays: ["Monday", "Wednesday"],
+        from: "10:00 AM",
+        to: "12:00 PM",
         duration: "2 hours",
     },
     {
@@ -282,12 +290,14 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                 ],
             },
         ],
-        instructor: {
+        tutor: {
             name: "Prof. Johnson",
             bio: "Professor of Chemistry with expertise in both organic and inorganic chemistry. Published researcher with passion for teaching.",
             avatar: "/avatars/prof-johnson.jpg",
         },
         sessionDays: ["Sunday", "Tuesday"],
+        from: "1:00 PM",
+        to: "2:30 PM",
         duration: "1.5 hours",
     },
     {
@@ -411,12 +421,14 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                 ],
             },
         ],
-        instructor: {
+        tutor: {
             name: "Dr. Williams",
             bio: "Experienced educator with dual expertise in English Literature and Mathematics. Known for innovative teaching methods.",
             avatar: "/avatars/dr-williams.jpg",
         },
         sessionDays: ["Friday", "Saturday"],
+        from: "4:00 PM",
+        to: "6:00 PM",
         duration: "2 hours",
     },
 ];

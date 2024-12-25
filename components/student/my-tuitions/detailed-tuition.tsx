@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-    Calendar,
-    CalendarDays,
-    Clock,
-    Presentation,
-} from "lucide-react";
+import { Calendar, CalendarDays, Clock, Presentation } from "lucide-react";
 import { tuitionDetailsMockData } from "@/lib/data";
 import SidebarSubjectItem from "@/components/student/my-tuitions/sidebar-subject-item";
 import SubjectContent from "@/components/student/my-tuitions/subject-content";
@@ -28,7 +23,7 @@ export default function DetailedTuition({ tuitionId }: { tuitionId: string }) {
                     <div className="flex items-center space-x-2">
                         <Presentation className="size-6" />
                         <h2 className="text-xl font-bold">
-                            {tuition.instructor.name}
+                            {tuition.tutor.name}
                         </h2>
                     </div>
                 </div>
@@ -48,7 +43,11 @@ export default function DetailedTuition({ tuitionId }: { tuitionId: string }) {
                     </div>
                     <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                         <Clock className="h-4 w-4" />
-                        <span>{tuition.duration}</span>
+                        <span>
+                            {" "}
+                            {tuition.duration +
+                                `(${tuition.from} to ${tuition.to})`}
+                        </span>
                     </div>
                 </div>
 

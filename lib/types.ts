@@ -8,7 +8,9 @@ export interface Tuition {
     tutor: string;
     totalTasks: number;
     completedTasks: number;
-    sessionDays: string[]
+    sessionDays: string[];
+    from: string;
+    to: string;
     duration: string;
 }
 
@@ -46,11 +48,13 @@ export interface Subject {
 export interface TuitionDetails {
     id: string;
     subjects: Subject[];
-    instructor: {
+    tutor: {
         name: string;
         bio: string;
         avatar: string;
     };
     sessionDays: string[];
+    from: string;
+    to: string;
     duration: string;
 }
