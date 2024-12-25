@@ -1,25 +1,24 @@
-import {
-    Card,
-    CardContent,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+"use client";
+
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tuition } from "@/lib/types";
 import { Progress } from "@/components/ui/progress";
 import {
     BookOpen,
-    CheckCircle2,
-    Circle,
     GraduationCap,
     Calendar,
-    ExternalLink,
     Clock,
+    ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { getNextClassDateText } from "@/lib/utils";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function TuitionCard({ tuition }: { tuition: Tuition }) {
+    const pathname = usePathname();
+    const router = useRouter();
+
     const overallProgress = Math.round(
         (tuition.subjects.reduce(
             (acc, subject) => acc + subject.completedTasks,
@@ -31,126 +30,115 @@ export default function TuitionCard({ tuition }: { tuition: Tuition }) {
             )) *
             100
     );
+
     const isCompleted = tuition.subjects.every(
         (subject) => subject.completedTasks === subject.totalTasks
     );
-    const formatNextClass = (dateString: string) => {
-        const date = new Date(dateString);
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-
-        // Format time
-        const timeString = date.toLocaleTimeString("en-US", {
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true,
-        });
-
-        // If class is today
-        if (date.toDateString() === today.toDateString()) {
-            return `Today, ${timeString}`;
-        }
-        // If class is tomorrow
-        if (date.toDateString() === tomorrow.toDateString()) {
-            return `Tomorrow, ${timeString}`;
-        }
-        // Otherwise show date and time
-        return date.toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true,
-        });
-    };
 
     return (
-        <Card className="w-full">
-            <CardHeader className="space-y-1">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                        <BookOpen className="h-5 w-5 text-muted-foreground" />
-                        <CardTitle className="text-xl">
-                            {tuition.subjects
-                                .map((subject) => subject.name)
-                                .join(", ")}
-                        </CardTitle>
+        <Card className="w-full hover:shadow-lg transition-shadow duration-200">
+            <CardHeader className="pb-4">
+                <div className="flex items-start justify-between">
+                    <div className="space-y-3">
+                        <div className="flex items-center space-x-2">
+                            <BookOpen className="h-5 w-5 text-primary" />
+                            <h3 className="font-semibold text-lg">
+                                {tuition.subjects.length > 2
+                                    ? `${tuition.subjects[0].name} +${
+                                          tuition.subjects.length - 1
+                                      } more`
+                                    : tuition.subjects
+                                          .map((subject) => subject.name)
+                                          .join(", ")}
+                            </h3>
+                        </div>
+                        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                            <GraduationCap className="h-4 w-4" />
+                            <span>{tuition.tutor}</span>
+                        </div>
                     </div>
-                    {isCompleted ? (
-                        <Badge
-                            variant="success"
-                            className="bg-green-100 text-green-800"
+                    <div className="flex gap-2">
+                        <Badge variant={isCompleted ? "success" : "secondary"}>
+                            {isCompleted ? "Completed" : "In Progress"}
+                        </Badge>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={() =>
+                                router.push(`${pathname}/${tuition.id}`)
+                            }
                         >
-                            <CheckCircle2 className="h-3 w-3 mr-1" />
-                            Completed
-                        </Badge>
-                    ) : (
-                        <Badge variant="secondary">
-                            <Circle className="h-3 w-3 mr-1" />
-                            In Progress
-                        </Badge>
-                    )}
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <GraduationCap className="h-4 w-4" />
-                    <span>{tuition.tutor}</span>
+                            <ExternalLink />
+                        </Button>
+                    </div>
                 </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-                <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">
-                            Overall Progress
-                        </span>
-                        <span className="text-sm text-muted-foreground">
-                            {overallProgress}%
-                        </span>
-                    </div>
-                    <Progress value={overallProgress} className="h-2" />
 
-                    {tuition.subjects.map((subject, index) => (
-                        <div key={index} className="space-y-1">
-                            <div className="flex items-center justify-between text-sm">
-                                <span className="text-muted-foreground">
-                                    {subject.name}
-                                </span>
-                                <span className="text-muted-foreground">
+            <CardContent className="space-y-6">
+                <div className="space-y-4">
+                    <div className="space-y-2">
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="font-medium">
+                                Overall Progress
+                            </span>
+                            <span className="text-muted-foreground font-medium">
+                                {overallProgress}%
+                            </span>
+                        </div>
+                        <Progress value={overallProgress} className="h-2" />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                        {tuition.subjects.map((subject, index) => (
+                            <div
+                                key={index}
+                                className="space-y-2 bg-muted/30 p-3 rounded-lg"
+                            >
+                                <div className="flex items-center justify-between text-sm">
+                                    <span className="font-medium">
+                                        {subject.name}
+                                    </span>
+                                    <span className="text-muted-foreground">
+                                        {Math.round(
+                                            (subject.completedTasks /
+                                                subject.totalTasks) *
+                                                100
+                                        )}
+                                        %
+                                    </span>
+                                </div>
+                                <Progress
+                                    value={
+                                        (subject.completedTasks /
+                                            subject.totalTasks) *
+                                        100
+                                    }
+                                    className="h-1"
+                                />
+                                <div className="text-xs text-muted-foreground">
                                     {subject.completedTasks}/
                                     {subject.totalTasks} Tasks
-                                </span>
+                                </div>
                             </div>
-                            <Progress
-                                value={
-                                    (subject.completedTasks /
-                                        subject.totalTasks) *
-                                    100
-                                }
-                                className="h-1"
-                            />
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
 
-                <div className="space-y-2">
-                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
-                        <span>
-                            Next Class: {formatNextClass(tuition.nextClass)}
-                        </span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4" />
-                        <span>Duration: {tuition.duration}</span>
+                <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-4">
+                        <div className="flex items-center space-x-2 text-muted-foreground">
+                            <Calendar className="h-4 w-4" />
+                            <span>
+                                {getNextClassDateText(tuition.sessionDays)}
+                            </span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-muted-foreground">
+                            <Clock className="h-4 w-4" />
+                            <span>{tuition.duration}</span>
+                        </div>
                     </div>
                 </div>
             </CardContent>
-            <CardFooter className="flex justify-end">
-                <Button size="sm">
-                    View Tuition
-                    <ExternalLink className="h-4 w-4 ml-2" />
-                </Button>
-            </CardFooter>
         </Card>
     );
 }

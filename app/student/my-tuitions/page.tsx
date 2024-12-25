@@ -80,8 +80,8 @@ export default function MyTuitions() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {tuitions.map((tuition, idx) => (
-                    <TuitionCard key={idx + "-t"} tuition={tuition} />
+                {tuitions.map(tuition => (
+                    <TuitionCard key={tuition.id} tuition={tuition} />
                 ))}
             </div>
         </div>
