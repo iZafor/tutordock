@@ -38,8 +38,6 @@ export default function TuitionOfferTimeRangeFilter({
     timeRange: TimeRange;
     setTimeRange: StateSetter<TimeRange>;
 }) {
-    console.log(TIME_SLOTS);
-
     return (
         <div className="flex gap-2 items-center">
             <Select

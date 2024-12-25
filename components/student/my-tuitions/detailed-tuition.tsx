@@ -22,7 +22,7 @@ export default function DetailedTuition({ tuitionId }: { tuitionId: string }) {
                 <div className="space-y-2">
                     <div className="flex items-center space-x-2">
                         <Presentation className="size-6" />
-                        <h2 className="text-xl font-bold">
+                        <h2 className="text-2xl font-bold">
                             {tuition.tutor.name}
                         </h2>
                     </div>
@@ -69,11 +69,7 @@ export default function DetailedTuition({ tuitionId }: { tuitionId: string }) {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 overflow-auto">
-                <div className="py-6 ps-6">
-                    <SubjectContent subject={selectedSubject} />
-                </div>
-            </div>
+            <SubjectContent subject={selectedSubject} />
         </div>
     );
 }

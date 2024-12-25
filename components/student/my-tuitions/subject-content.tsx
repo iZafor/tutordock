@@ -33,7 +33,7 @@ export default function SubjectContent({ subject }: { subject: Subject }) {
     });
 
     return (
-        <div className="space-y-6 p-8">
+        <div className="w-full space-y-6 py-6 ps-6">
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold">{subject.name}</h1>
