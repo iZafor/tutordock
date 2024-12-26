@@ -5,13 +5,18 @@ export interface Tuition {
         totalTasks: number;
         completedTasks: number;
     }[];
-    tutor: string;
+    tutor?: string;
+    student?: string;
+    grade?: string;
     totalTasks: number;
     completedTasks: number;
     sessionDays: string[];
     from: string;
     to: string;
     duration: string;
+    startDate?: string;
+    endDate?: string;
+    status: "on-going" | "discontinued";
 }
 
 export interface Task {

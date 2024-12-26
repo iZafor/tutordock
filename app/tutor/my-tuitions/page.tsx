@@ -8,7 +8,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import TuitionCard from "@/components/ui/tuition-card";
-import { tuitionMockData } from "@/lib/data";
+import { tuitionMockDataForTutor } from "@/lib/data";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
@@ -20,12 +20,12 @@ export default function MyTuitions() {
     const [progress, setProgress] = useState("");
     const [status, setStatus] = useState("");
 
-    const filteredTuitions = tuitionMockData.filter((t) => {
+    const filteredTuitions = tuitionMockDataForTutor.filter((t) => {
         const lowerTerm = searchTerm.toLowerCase();
         const matchesSearchTerm =
             !lowerTerm ||
             t.subjects.some((s) => s.name.toLowerCase().includes(lowerTerm)) ||
-            t.tutor!.toLowerCase().includes(lowerTerm);
+            t.student!.toLowerCase().includes(lowerTerm);
         const matchesProgress =
             progress === "" ||
             progress === "all" ||
@@ -43,7 +43,7 @@ export default function MyTuitions() {
                 <div className="flex-1 min-w-[200px]">
                     <Input
                         value={searchTerm}
-                        placeholder="Search subjects or tutors..."
+                        placeholder="Search subjects or students..."
                         className="w-full"
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />

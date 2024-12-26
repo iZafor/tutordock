@@ -27,6 +27,7 @@ export const tuitionMockData: Tuition[] = [
         from: "10:00 AM",
         to: "12:00 PM",
         duration: "2 hours",
+        status: "on-going",
     },
     {
         id: "tuition-2",
@@ -49,6 +50,7 @@ export const tuitionMockData: Tuition[] = [
         from: "1:00 PM",
         to: "2:30 PM",
         duration: "1.5 hours",
+        status: "on-going",
     },
     {
         id: "tuition-3",
@@ -76,6 +78,7 @@ export const tuitionMockData: Tuition[] = [
         from: "4:00 PM",
         to: "6:00 PM",
         duration: "2 hours",
+        status: "on-going",
     },
 ];
 
@@ -615,5 +618,59 @@ export const tuitionApplicationMockData: TuitionApplication[] = [
             endTime: "16:00",
         },
         preferredMode: "hybrid",
+    },
+];
+
+export const tuitionMockDataForTutor: Tuition[] = [
+    {
+        id: "tuition-1",
+        student: "John Smith",
+        subjects: [
+            { name: "Mathematics", totalTasks: 10, completedTasks: 7 },
+            { name: "Physics", totalTasks: 8, completedTasks: 5 },
+        ],
+        totalTasks: 18,
+        completedTasks: 12,
+        sessionDays: ["Monday", "Wednesday"],
+        from: "10:00 AM",
+        to: "12:00 PM",
+        duration: "2 hours",
+        grade: "Grade 11",
+        startDate: "2024-11-01",
+        status: "on-going",
+    },
+    {
+        id: "tuition-2",
+        student: "Emily Chen",
+        subjects: [
+            { name: "Chemistry", totalTasks: 12, completedTasks: 5 },
+            { name: "Biology", totalTasks: 15, completedTasks: 9 },
+        ],
+        totalTasks: 27,
+        completedTasks: 14,
+        sessionDays: ["Tuesday", "Thursday"],
+        from: "2:00 PM",
+        to: "3:30 PM",
+        duration: "1.5 hours",
+        grade: "Grade 12",
+        startDate: "2024-10-15",
+        status: "on-going",
+    },
+    {
+        id: "tuition-3",
+        student: "Sarah Williams",
+        subjects: [
+            { name: "English", totalTasks: 8, completedTasks: 8 },
+            { name: "Literature", totalTasks: 6, completedTasks: 6 },
+            { name: "Mathematics", totalTasks: 10, completedTasks: 10 },
+        ],
+        totalTasks: 24,
+        completedTasks: 24,
+        sessionDays: ["Friday"],
+        from: "4:00 PM",
+        to: "6:00 PM",
+        duration: "2 hours",
+        startDate: "2024-09-01",
+        status: "on-going",
     },
 ];

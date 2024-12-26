@@ -9,6 +9,7 @@ import {
     Calendar,
     Clock,
     ExternalLink,
+    Presentation,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -70,8 +71,12 @@ export default function TuitionCard({ tuition }: { tuition: Tuition }) {
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <GraduationCap className="h-4 w-4" />
-                        <span>{tuition.tutor}</span>
+                        {tuition.student ? (
+                            <GraduationCap className="h-4 w-4" />
+                        ) : (
+                            <Presentation className="h-4 w-4" />
+                        )}
+                        <span>{tuition.tutor || tuition.student}</span>
                     </div>
                     <div className="w-full flex items-center justify-between gap-4 text-sm">
                         <div className="flex items-center space-x-2 text-muted-foreground">
