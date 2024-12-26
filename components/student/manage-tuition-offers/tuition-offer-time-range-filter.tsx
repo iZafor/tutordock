@@ -6,6 +6,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { StateSetter } from "@/lib/extra-types";
+import { _24HourToAmPm } from "@/lib/utils";
 
 type TimeRange = {
     start: string;
@@ -16,14 +17,7 @@ const TIME_SLOTS = Array.from({ length: 24 * 2 }).map((_, i) => {
     const hour = Math.floor(i / 2);
     const minute = i % 2 === 0 ? "00" : "30";
     const time24h = `${hour.toString().padStart(2, "0")}:${minute}`;
-
-    // Format for display (AM/PM)
-    const date = new Date(`2024-01-01T${time24h}`);
-    const timeAMPM = date.toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-    });
+    const timeAMPM = _24HourToAmPm(time24h);
 
     return {
         value: time24h,

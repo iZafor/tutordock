@@ -77,3 +77,22 @@ export interface TuitionOffer {
     mode: "online" | "in-person" | "hybrid";
     status: "pending" | "accepted" | "rejected" | "expired";
 }
+
+export interface TuitionApplication {
+    offerId: string;
+    applicationId: string;
+    tutor: string;
+    rating: number;
+    experience: string;
+    applicationDate: string;
+    status: "accepted" | "rejected" | "shortlisted" | "pending";
+    message: string;
+    expectedBudget?: {
+        amount: number;
+        rateType: "hour" | "month" | "week";
+    };
+    totalTuitions: number;
+    specialization: string[];
+    preferredSchedule?: Schedule;
+    preferredMode?: "online" | "in-person" | "hybrid";
+}

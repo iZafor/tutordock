@@ -14,59 +14,14 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import {
-    Calendar,
-    Monitor,
-    Ellipsis,
-    Eye,
-    Trash2,
-    Clock4,
-    CheckCircle2,
-    Clock,
-    XCircle,
-} from "lucide-react";
+import { Calendar, Monitor, Ellipsis, Eye, Trash2 } from "lucide-react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { TuitionOffer } from "@/lib/types";
 import { usePathname, useRouter } from "next/navigation";
-
-const getStatusBadgeVariant = (status: string) => {
-    switch (status) {
-        case "pending":
-            return "warning";
-        case "accepted":
-            return "success";
-        case "rejected":
-            return "destructive";
-        case "expired":
-            return "secondary";
-        default:
-            return "default";
-    }
-};
-
-const getStatusIcon = (status: string) => {
-    switch (status) {
-        case "pending":
-            return <Clock4 className="h-4 w-4" />;
-        case "accepted":
-            return <CheckCircle2 className="h-4 w-4" />;
-        case "rejected":
-            return <XCircle className="h-4 w-4" />;
-        case "expired":
-            return <Clock className="h-4 w-4" />;
-        default:
-            return null;
-    }
-};
-
-const formatTime = (time: string) => {
-    return new Date(`2024-01-01T${time}`).toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-    });
-};
+import { getStatusBadgeVariant, getStatusIcon } from "@/lib/ui-utils";
+import { _24HourToAmPm } from "@/lib/utils";
 
 export default function TuitionOfferTable({
     offers,
@@ -112,8 +67,11 @@ export default function TuitionOfferTable({
                                         {offer.schedule.weekdays.join(", ")}
                                     </span>
                                     <span className="text-sm text-muted-foreground">
-                                        {formatTime(offer.schedule.startTime)} -{" "}
-                                        {formatTime(offer.schedule.endTime)}
+                                        {_24HourToAmPm(
+                                            offer.schedule.startTime
+                                        )}{" "}
+                                        -{" "}
+                                        {_24HourToAmPm(offer.schedule.endTime)}
                                     </span>
                                 </div>
                             </TableCell>
@@ -159,7 +117,8 @@ export default function TuitionOfferTable({
                                         <DropdownMenuItem
                                             onClick={() =>
                                                 router.push(
-                                                    pathname + "/offer-details"
+                                                    pathname +
+                                                        `/${offer.offerId}`
                                                 )
                                             }
                                         >

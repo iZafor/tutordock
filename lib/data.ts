@@ -1,4 +1,9 @@
-import { Tuition, TuitionDetails, TuitionOffer } from "./types";
+import {
+    Tuition,
+    TuitionApplication,
+    TuitionDetails,
+    TuitionOffer,
+} from "./types";
 
 export const tuitionMockData: Tuition[] = [
     {
@@ -465,5 +470,150 @@ export const tuitionOfferMockData: TuitionOffer[] = [
         },
         mode: "hybrid",
         status: "accepted",
+    },
+];
+
+export const tuitionApplicationMockData: TuitionApplication[] = [
+    {
+        offerId: "TO-2024-001",
+        applicationId: "APP-001-001",
+        tutor: "John Smith",
+        rating: 4.8,
+        experience: "5 years",
+        applicationDate: "2024-12-20",
+        status: "pending",
+        message:
+            "I have extensive experience teaching both Mathematics and Physics at high school level. My students consistently achieve A grades in their exams.",
+        expectedBudget: {
+            amount: 60,
+            rateType: "hour",
+        },
+        totalTuitions: 45,
+        specialization: ["AP Physics", "IB Mathematics", "SAT Math Level 2"],
+        preferredSchedule: {
+            weekdays: ["Monday", "Wednesday"],
+            startTime: "10:00",
+            endTime: "12:00",
+        },
+        preferredMode: "online",
+    },
+    {
+        offerId: "TO-2024-001",
+        applicationId: "APP-001-002",
+        tutor: "Sarah Johnson",
+        rating: 4.9,
+        experience: "7 years",
+        applicationDate: "2024-12-21",
+        status: "shortlisted",
+        message:
+            "I specialize in online tutoring and have helped many students excel in Physics. I can adapt my teaching style to match student needs.",
+        expectedBudget: {
+            amount: 70,
+            rateType: "hour",
+        },
+        totalTuitions: 78,
+        specialization: [
+            "SAT Math",
+            "Advanced Physics",
+            "Competitive Mathematics",
+        ],
+        preferredSchedule: {
+            weekdays: ["Monday", "Wednesday", "Friday"],
+            startTime: "10:00",
+            endTime: "12:00",
+        },
+        preferredMode: "online",
+    },
+    {
+        offerId: "TO-2024-001",
+        applicationId: "APP-001-003",
+        tutor: "Michael Chen",
+        rating: 4.7,
+        experience: "4 years",
+        applicationDate: "2024-12-22",
+        status: "pending",
+        message:
+            "I hold a Masters in Physics and have experience teaching both online and in-person. I focus on building strong fundamentals.",
+        expectedBudget: {
+            amount: 50,
+            rateType: "hour",
+        },
+        totalTuitions: 32,
+        specialization: ["Physics", "Calculus", "Mechanics"],
+        preferredSchedule: {
+            weekdays: ["Monday", "Wednesday", "Friday"],
+            startTime: "11:00",
+            endTime: "13:00",
+        },
+        preferredMode: "online",
+    },
+    {
+        offerId: "TO-2024-002",
+        applicationId: "APP-002-001",
+        tutor: "Rahima Khan",
+        rating: 4.9,
+        experience: "8 years",
+        applicationDate: "2024-12-20",
+        status: "accepted",
+        message:
+            "I am a published author in Bangla Literature and have been teaching Physics for 8 years. I can provide comprehensive coverage of both subjects.",
+        expectedBudget: {
+            amount: 4000,
+            rateType: "month",
+        },
+        totalTuitions: 92,
+        specialization: ["Bangla Literature", "Creative Writing", "Physics"],
+        preferredSchedule: {
+            weekdays: ["Tuesday", "Thursday"],
+            startTime: "14:00",
+            endTime: "16:00",
+        },
+        preferredMode: "hybrid",
+    },
+    {
+        offerId: "TO-2024-002",
+        applicationId: "APP-002-002",
+        tutor: "Anik Rahman",
+        rating: 4.6,
+        experience: "6 years",
+        applicationDate: "2024-12-21",
+        status: "rejected",
+        message:
+            "I have experience teaching both Physics and Bangla Literature. I use interactive teaching methods and real-world examples.",
+        totalTuitions: 55,
+        specialization: [
+            "Modern Bangla Literature",
+            "Physics",
+            "Science Communication",
+        ],
+        preferredSchedule: {
+            weekdays: ["Tuesday", "Thursday"],
+            startTime: "15:00",
+            endTime: "17:00",
+        },
+        preferredMode: "in-person",
+    },
+    {
+        offerId: "TO-2024-002",
+        applicationId: "APP-002-003",
+        tutor: "Fahmida Akter",
+        rating: 4.8,
+        experience: "5 years",
+        applicationDate: "2024-12-22",
+        status: "pending",
+        message:
+            "I specialize in making complex Physics concepts easy to understand and have a deep passion for Bangla Literature.",
+        totalTuitions: 48,
+        specialization: [
+            "Classical Bangla Literature",
+            "Modern Physics",
+            "Academic Writing",
+        ],
+        preferredSchedule: {
+            weekdays: ["Tuesday", "Thursday"],
+            startTime: "14:00",
+            endTime: "16:00",
+        },
+        preferredMode: "hybrid",
     },
 ];

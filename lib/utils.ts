@@ -37,3 +37,15 @@ export function getNextClassDateText(sessionDays: string[]) {
         "PPP"
     );
 }
+
+export function _24HourToAmPm(time24h: string) {
+    const [hour, minute] = time24h.split(":");
+    const hn = Number(hour);
+    return hn < 12
+        ? hn === 0
+            ? `12:${minute} AM`
+            : `${time24h} AM`
+        : hn === 12
+        ? `${time24h} PM`
+        : `${hn - 12}:${minute} PM`;
+}
