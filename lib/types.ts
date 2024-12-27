@@ -44,7 +44,6 @@ export interface Resource {
 export interface Subject {
     id: string;
     name: string;
-    description: string;
     tasks: Task[];
     resources: Resource[];
     progress: number;
@@ -53,7 +52,12 @@ export interface Subject {
 export interface TuitionDetails {
     id: string;
     subjects: Subject[];
-    tutor: {
+    tutor?: {
+        name: string;
+        bio: string;
+        avatar: string;
+    };
+    student?: {
         name: string;
         bio: string;
         avatar: string;

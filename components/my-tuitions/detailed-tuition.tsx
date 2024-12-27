@@ -1,18 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, CalendarDays, Clock, Presentation } from "lucide-react";
-import { tuitionDetailsMockData } from "@/lib/data";
-import SidebarSubjectItem from "@/components/student/my-tuitions/sidebar-subject-item";
-import SubjectContent from "@/components/student/my-tuitions/subject-content";
+import {
+    Calendar,
+    CalendarDays,
+    Clock,
+    GraduationCap,
+    Presentation,
+} from "lucide-react";
+import {
+    tuitionDetailsMockData,
+    tuitionDetailsMockDataForTutor,
+} from "@/lib/data";
+import SidebarSubjectItem from "@/components/my-tuitions/sidebar-subject-item";
+import SubjectContent from "@/components/my-tuitions/subject-content";
 import { Subject, TuitionDetails } from "@/lib/types";
 import { getNextClassDateText } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 export default function DetailedTuition({ tuitionId }: { tuitionId: string }) {
-    const tuition = tuitionDetailsMockData.find(
-        (t) => t.id === tuitionId
-    ) as TuitionDetails;
+    const isStudent = usePathname().includes("/student");
+    const tuition = (
+        isStudent ? tuitionDetailsMockData : tuitionDetailsMockDataForTutor
+    ).find((t) => t.id === tuitionId) as TuitionDetails;
     const [selectedSubject, setSelectedSubject] = useState(tuition.subjects[0]);
 
     return (
@@ -21,9 +32,15 @@ export default function DetailedTuition({ tuitionId }: { tuitionId: string }) {
             <div className="w-80 border-r bg-card py-6 pr-6 space-y-6">
                 <div className="space-y-2">
                     <div className="flex items-center space-x-2">
-                        <Presentation className="size-6" />
+                        {isStudent ? (
+                            <Presentation className="size-6" />
+                        ) : (
+                            <GraduationCap className="size-6" />
+                        )}
                         <h2 className="text-2xl font-bold">
-                            {tuition.tutor.name}
+                            {isStudent
+                                ? tuition.tutor?.name
+                                : tuition.student?.name}
                         </h2>
                     </div>
                 </div>

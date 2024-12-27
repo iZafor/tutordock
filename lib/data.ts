@@ -89,8 +89,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "math-101",
                 name: "Mathematics",
-                description:
-                    "Advanced calculus and algebraic concepts for high school students",
                 progress: 75,
                 tasks: [
                     {
@@ -140,8 +138,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "physics-101",
                 name: "Physics",
-                description:
-                    "Fundamental physics concepts including mechanics and thermodynamics",
                 progress: 67,
                 tasks: [
                     {
@@ -204,8 +200,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "chem-101",
                 name: "Chemistry",
-                description:
-                    "Comprehensive study of organic and inorganic chemistry",
                 progress: 44,
                 tasks: [
                     {
@@ -251,7 +245,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "bio-101",
                 name: "Biology",
-                description: "Study of life processes and living organisms",
                 progress: 80,
                 tasks: [
                     {
@@ -314,8 +307,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "eng-101",
                 name: "English",
-                description:
-                    "Advanced English language and composition studies",
                 progress: 100,
                 tasks: [
                     {
@@ -363,8 +354,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "lit-101",
                 name: "Literature",
-                description:
-                    "Analysis of classical and contemporary literature",
                 progress: 100,
                 tasks: [
                     {
@@ -400,8 +389,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "math-102",
                 name: "Mathematics",
-                description:
-                    "Advanced mathematical concepts and problem-solving",
                 progress: 100,
                 tasks: [
                     {
@@ -672,5 +659,273 @@ export const tuitionMockDataForTutor: Tuition[] = [
         duration: "2 hours",
         startDate: "2024-09-01",
         status: "on-going",
+    },
+];
+
+export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
+    {
+        id: "tuition-1",
+        student: {
+            name: "John Smith",
+            bio: "11th grade student with keen interest in STEM subjects. Aspiring engineer with strong analytical skills.",
+            avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=John",
+        },
+        subjects: [
+            {
+                id: "math-11",
+                name: "Mathematics",
+                progress: 70,
+                tasks: [
+                    {
+                        id: "math-task-1",
+                        title: "Differential Calculus Assignment",
+                        assignedDate: "2024-12-20",
+                        dueDate: "2024-12-27",
+                        status: "pending",
+                        description:
+                            "Complete problems 1-10 from Chapter 4 on differentiation",
+                        submission: {
+                            status: "draft",
+                            date: "2024-12-26",
+                        },
+                    },
+                    {
+                        id: "math-task-2",
+                        title: "Algebra Quiz",
+                        assignedDate: "2024-12-15",
+                        dueDate: "2024-12-22",
+                        status: "completed",
+                        description: "Online quiz covering quadratic equations",
+                        submission: {
+                            status: "submitted",
+                            date: "2024-12-21",
+                        },
+                    },
+                ],
+                resources: [
+                    {
+                        id: "math-res-1",
+                        name: "Calculus Fundamentals",
+                        type: "document",
+                        url: "/resources/calculus-basics.pdf",
+                        dateAdded: "2024-11-01",
+                    },
+                    {
+                        id: "math-res-2",
+                        name: "Algebra Practice Problems",
+                        type: "document",
+                        url: "/resources/algebra-practice.pdf",
+                        dateAdded: "2024-11-05",
+                    },
+                ],
+            },
+            {
+                id: "physics-11",
+                name: "Physics",
+                progress: 62.5,
+                tasks: [
+                    {
+                        id: "physics-task-1",
+                        title: "Newton's Laws Lab Report",
+                        assignedDate: "2024-12-18",
+                        dueDate: "2024-12-25",
+                        status: "pending",
+                        description:
+                            "Write a lab report on the experiments conducted on Newton's laws",
+                        submission: {
+                            status: "draft",
+                        },
+                    },
+                ],
+                resources: [
+                    {
+                        id: "physics-res-1",
+                        name: "Mechanics Video Lecture",
+                        type: "video",
+                        url: "/resources/mechanics-lecture.mp4",
+                        dateAdded: "2024-11-10",
+                    },
+                ],
+            },
+        ],
+        sessionDays: ["Monday", "Wednesday"],
+        from: "10:00",
+        to: "12:00",
+        duration: "2 hours",
+    },
+    {
+        id: "tuition-2",
+        student: {
+            name: "Emily Chen",
+            bio: "12th grade student preparing for medical school. Strong foundation in biology and chemistry.",
+            avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emily",
+        },
+        subjects: [
+            {
+                id: "chem-12",
+                name: "Chemistry",
+                progress: 41.6,
+                tasks: [
+                    {
+                        id: "chem-task-1",
+                        title: "Organic Chemistry Worksheet",
+                        assignedDate: "2024-12-19",
+                        dueDate: "2024-12-26",
+                        status: "pending",
+                        description:
+                            "Complete the worksheet on organic compounds and their reactions",
+                        submission: {
+                            status: null,
+                        },
+                    },
+                ],
+                resources: [
+                    {
+                        id: "chem-res-1",
+                        name: "Organic Chemistry Notes",
+                        type: "document",
+                        url: "/resources/organic-chem.pdf",
+                        dateAdded: "2024-10-15",
+                    },
+                ],
+            },
+            {
+                id: "bio-12",
+                name: "Biology",
+                progress: 60,
+                tasks: [
+                    {
+                        id: "bio-task-1",
+                        title: "Genetics Case Study",
+                        assignedDate: "2024-12-15",
+                        dueDate: "2024-12-22",
+                        status: "completed",
+                        description:
+                            "Analyze the given genetic inheritance patterns",
+                        submission: {
+                            status: "submitted",
+                            date: "2024-12-21",
+                            file: "genetics-case-study.pdf",
+                        },
+                    },
+                ],
+                resources: [
+                    {
+                        id: "bio-res-1",
+                        name: "Human Anatomy Reference",
+                        type: "link",
+                        url: "https://example.com/anatomy",
+                        dateAdded: "2024-10-20",
+                    },
+                ],
+            },
+        ],
+        sessionDays: ["Tuesday", "Thursday"],
+        from: "14:00",
+        to: "15:30",
+        duration: "1.5 hours",
+    },
+    {
+        id: "tuition-3",
+        student: {
+            name: "Sarah Williams",
+            bio: "10th grade student with a passion for literature and creative writing.",
+            avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+        },
+        subjects: [
+            {
+                id: "eng-10",
+                name: "English",
+                progress: 100,
+                tasks: [
+                    {
+                        id: "eng-task-1",
+                        title: "Essay Writing",
+                        assignedDate: "2024-12-10",
+                        dueDate: "2024-12-17",
+                        status: "completed",
+                        description: "Write a 1000-word analytical essay",
+                        submission: {
+                            status: "submitted",
+                            date: "2024-12-16",
+                            file: "analytical-essay.doc",
+                        },
+                    },
+                ],
+                resources: [
+                    {
+                        id: "eng-res-1",
+                        name: "Essay Writing Guide",
+                        type: "document",
+                        url: "/resources/essay-guide.pdf",
+                        dateAdded: "2024-09-01",
+                    },
+                ],
+            },
+            {
+                id: "lit-10",
+                name: "Literature",
+                progress: 100,
+                tasks: [
+                    {
+                        id: "lit-task-1",
+                        title: "Book Review",
+                        assignedDate: "2024-12-05",
+                        dueDate: "2024-12-12",
+                        status: "completed",
+                        description:
+                            "Write a review of 'To Kill a Mockingbird'",
+                        submission: {
+                            status: "submitted",
+                            date: "2024-12-11",
+                            file: "book-review.pdf",
+                        },
+                    },
+                ],
+                resources: [
+                    {
+                        id: "lit-res-1",
+                        name: "Literary Analysis Techniques",
+                        type: "document",
+                        url: "/resources/literary-analysis.pdf",
+                        dateAdded: "2024-09-05",
+                    },
+                ],
+            },
+            {
+                id: "math-10",
+                name: "Mathematics",
+                progress: 100,
+                tasks: [
+                    {
+                        id: "math-task-3",
+                        title: "Final Assessment",
+                        assignedDate: "2024-12-01",
+                        dueDate: "2024-12-08",
+                        status: "completed",
+                        description:
+                            "Complete the final assessment covering all topics",
+                        submission: {
+                            status: "submitted",
+                            date: "2024-12-07",
+                            file: "final-assessment.pdf",
+                        },
+                    },
+                ],
+                resources: [
+                    {
+                        id: "math-res-3",
+                        name: "Mathematics Formula Sheet",
+                        type: "document",
+                        url: "/resources/math-formulas.pdf",
+                        dateAdded: "2024-09-10",
+                    },
+                ],
+            },
+        ],
+        sessionDays: ["Friday"],
+        from: "164:00",
+        to: "18:00",
+        duration: "2 hours",
     },
 ];

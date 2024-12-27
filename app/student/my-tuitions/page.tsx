@@ -7,7 +7,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import TuitionCard from "@/components/ui/tuition-card";
+import TuitionCard from "@/components/my-tuitions/tuition-card";
 import { tuitionMockData } from "@/lib/data";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";

@@ -10,10 +10,12 @@ import { Calendar, Clock, ChevronUp, ChevronDown, Upload } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 export default function TaskCard({ task }: { task: Task }) {
     const [isOpen, setIsOpen] = useState(false);
     const [file, setFile] = useState<File | null>(null);
+    const isStudent = usePathname().includes("/student");
 
     const getStatusBadge = (status: Task["status"]) => {
         switch (status) {
@@ -85,7 +87,7 @@ export default function TaskCard({ task }: { task: Task }) {
                                     {task.description}
                                 </p>
                             </div>
-                            {task.status !== "completed" && (
+                            {isStudent && task.status !== "completed" && (
                                 <div className="space-y-2">
                                     <h4 className="font-semibold">
                                         Submit Your Work
