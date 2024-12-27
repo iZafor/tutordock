@@ -31,6 +31,8 @@ export interface Task {
         date?: string;
         file?: string;
     };
+    maxPoints?: number;
+    score?: number;
 }
 
 export interface Resource {

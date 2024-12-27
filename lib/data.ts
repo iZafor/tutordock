@@ -103,6 +103,7 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "draft",
                             date: "2024-12-24",
                         },
+                        maxPoints: 100,
                     },
                     {
                         id: "task-math-2",
@@ -116,6 +117,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-21",
                         },
+                        maxPoints: 50,
+                        score: 42,
                     },
                 ],
                 resources: [
@@ -151,6 +154,7 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "draft",
                         },
+                        maxPoints: 100,
                     },
                     {
                         id: "task-physics-2",
@@ -164,6 +168,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-16",
                         },
+                        maxPoints: 75,
+                        score: 68,
                     },
                 ],
                 resources: [
@@ -213,6 +219,7 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "draft",
                         },
+                        maxPoints: 100,
                     },
                     {
                         id: "task-chem-2",
@@ -223,6 +230,7 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         description:
                             "Complete the online quiz about periodic table elements",
                         submission: undefined,
+                        maxPoints: 50,
                     },
                 ],
                 resources: [
@@ -258,6 +266,7 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "draft",
                         },
+                        maxPoints: 50,
                     },
                     {
                         id: "task-bio-2",
@@ -271,6 +280,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-19",
                         },
+                        maxPoints: 100,
+                        score: 90,
                     },
                 ],
                 resources: [
@@ -320,6 +331,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-21",
                         },
+                        maxPoints: 100,
+                        score: 95,
                     },
                     {
                         id: "task-eng-2",
@@ -332,6 +345,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-16",
                         },
+                        maxPoints: 50,
+                        score: 48,
                     },
                 ],
                 resources: [
@@ -367,6 +382,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-24",
                         },
+                        maxPoints: 100,
+                        score: 92,
                     },
                 ],
                 resources: [
@@ -403,6 +420,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-16",
                         },
+                        maxPoints: 100,
+                        score: 88,
                     },
                 ],
                 resources: [
@@ -688,6 +707,7 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                             status: "draft",
                             date: "2024-12-26",
                         },
+                        maxPoints: 100,
                     },
                     {
                         id: "math-task-2",
@@ -700,6 +720,8 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                             status: "submitted",
                             date: "2024-12-21",
                         },
+                        maxPoints: 50,
+                        score: 45,
                     },
                 ],
                 resources: [
@@ -735,6 +757,7 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         submission: {
                             status: "draft",
                         },
+                        maxPoints: 100,
                     },
                 ],
                 resources: [
@@ -777,6 +800,7 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         submission: {
                             status: null,
                         },
+                        maxPoints: 50,
                     },
                 ],
                 resources: [
@@ -807,6 +831,8 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                             date: "2024-12-21",
                             file: "genetics-case-study.pdf",
                         },
+                        maxPoints: 100,
+                        score: 92,
                     },
                 ],
                 resources: [
@@ -850,6 +876,8 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                             date: "2024-12-16",
                             file: "analytical-essay.doc",
                         },
+                        maxPoints: 100,
+                        score: 95,
                     },
                 ],
                 resources: [
@@ -880,6 +908,8 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                             date: "2024-12-11",
                             file: "book-review.pdf",
                         },
+                        maxPoints: 50,
+                        score: 48,
                     },
                 ],
                 resources: [
@@ -910,6 +940,8 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                             date: "2024-12-07",
                             file: "final-assessment.pdf",
                         },
+                        maxPoints: 100,
+                        score: 88,
                     },
                 ],
                 resources: [
@@ -918,13 +950,13 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         name: "Mathematics Formula Sheet",
                         type: "document",
                         url: "/resources/math-formulas.pdf",
-                        dateAdded: "2024-09-10",
+                        dateAdded: "2024-09-15",
                     },
                 ],
             },
         ],
         sessionDays: ["Friday"],
-        from: "164:00",
+        from: "16:00",
         to: "18:00",
         duration: "2 hours",
     },
