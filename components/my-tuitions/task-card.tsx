@@ -7,7 +7,7 @@ import {
     Collapsible,
     CollapsibleTrigger,
     CollapsibleContent,
-} from "@radix-ui/react-collapsible";
+} from "@/components/ui/collapsible";
 import {
     Calendar,
     Clock,
@@ -16,6 +16,7 @@ import {
     Upload,
     Trophy,
     Pencil,
+    Download,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState, useRef, useEffect } from "react";
@@ -165,6 +166,55 @@ export default function TaskCard({ task }: { task: Task }) {
         );
     };
 
+    const SubmissionSection = () => {
+        if (task.submission?.status === "submitted" && task.submission.file) {
+            return (
+                <div className="space-y-2">
+                    <h4 className="font-semibold">Submission</h4>
+                    <div className="flex items-center space-x-2">
+                        <Button variant="outline" asChild className="max-w-md">
+                            <a
+                                href={task.submission.file.url}
+                                download={task.submission.file.name}
+                                className="flex items-center"
+                            >
+                                <Download className="size-4 mr-2" />
+                                {task.submission.file.name}
+                            </a>
+                        </Button>
+                        <span className="text-sm text-muted-foreground">
+                            Submitted on{" "}
+                            {new Date(
+                                task.submission.date!
+                            ).toLocaleDateString()}
+                        </span>
+                    </div>
+                </div>
+            );
+        }
+
+        if (isStudent && task.status !== "completed") {
+            return (
+                <div className="space-y-2">
+                    <h4 className="font-semibold">Submit Your Work</h4>
+                    <div className="flex items-center space-x-2">
+                        <Input
+                            type="file"
+                            onChange={handleFileChange}
+                            className="max-w-md"
+                        />
+                        <Button onClick={handleSubmit} disabled={!file}>
+                            <Upload className="size-4 mr-2" />
+                            Submit
+                        </Button>
+                    </div>
+                </div>
+            );
+        }
+
+        return null;
+    };
+
     return (
         <Card className="mb-4">
             <Collapsible open={isOpen} onOpenChange={setIsOpen}>
@@ -217,27 +267,7 @@ export default function TaskCard({ task }: { task: Task }) {
                                     {task.description}
                                 </p>
                             </div>
-                            {isStudent && task.status !== "completed" && (
-                                <div className="space-y-2">
-                                    <h4 className="font-semibold">
-                                        Submit Your Work
-                                    </h4>
-                                    <div className="flex items-center space-x-2">
-                                        <Input
-                                            type="file"
-                                            onChange={handleFileChange}
-                                            className="max-w-md"
-                                        />
-                                        <Button
-                                            onClick={handleSubmit}
-                                            disabled={!file}
-                                        >
-                                            <Upload className="size-4 mr-2" />
-                                            Submit
-                                        </Button>
-                                    </div>
-                                </div>
-                            )}
+                            <SubmissionSection />
                         </div>
                     </CardContent>
                 </CollapsibleContent>

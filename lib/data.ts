@@ -116,6 +116,10 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-21",
+                            file: {
+                                name: "linear-algebra-quiz.pdf",
+                                url: "/submissions/linear-algebra-quiz.pdf"
+                            }
                         },
                         maxPoints: 50,
                         score: 42,
@@ -167,6 +171,10 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-16",
+                            file: {
+                                name: "thermodynamics-problems.pdf",
+                                url: "/submissions/thermodynamics-problems.pdf"
+                            }
                         },
                         maxPoints: 75,
                         score: 68,
@@ -279,6 +287,10 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-19",
+                            file: {
+                                name: "genetics-project.pdf",
+                                url: "/submissions/genetics-project.pdf"
+                            }
                         },
                         maxPoints: 100,
                         score: 90,
@@ -330,6 +342,10 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-21",
+                            file: {
+                                name: "analytical-essay.pdf",
+                                url: "/submissions/analytical-essay.pdf"
+                            }
                         },
                         maxPoints: 100,
                         score: 95,
@@ -344,6 +360,10 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-16",
+                            file: {
+                                name: "grammar-assessment.pdf",
+                                url: "/submissions/grammar-assessment.pdf"
+                            }
                         },
                         maxPoints: 50,
                         score: 48,
@@ -381,6 +401,10 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-24",
+                            file: {
+                                name: "shakespeare-analysis.pdf",
+                                url: "/submissions/shakespeare-analysis.pdf"
+                            }
                         },
                         maxPoints: 100,
                         score: 92,
@@ -419,6 +443,10 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-16",
+                            file: {
+                                name: "calculus-final.pdf",
+                                url: "/submissions/calculus-final.pdf"
+                            }
                         },
                         maxPoints: 100,
                         score: 88,
@@ -719,6 +747,10 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-21",
+                            file: {
+                                name: "algebra-quiz-submission.pdf",
+                                url: "/submissions/algebra-quiz-submission.pdf",
+                            },
                         },
                         maxPoints: 50,
                         score: 45,
@@ -829,7 +861,10 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-21",
-                            file: "genetics-case-study.pdf",
+                            file: {
+                                name: "genetics-case-study.pdf",
+                                url: "/submissions/genetics-case-study.pdf",
+                            },
                         },
                         maxPoints: 100,
                         score: 92,
@@ -874,7 +909,10 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-16",
-                            file: "analytical-essay.doc",
+                            file: {
+                                name: "analytical-essay.doc",
+                                url: "/submissions/analytical-essay.doc",
+                            },
                         },
                         maxPoints: 100,
                         score: 95,
@@ -906,7 +944,10 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-11",
-                            file: "book-review.pdf",
+                            file: {
+                                name: "book-review.pdf",
+                                url: "/submissions/book-review.pdf",
+                            },
                         },
                         maxPoints: 50,
                         score: 48,
@@ -938,7 +979,10 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         submission: {
                             status: "submitted",
                             date: "2024-12-07",
-                            file: "final-assessment.pdf",
+                            file: {
+                                name: "final-assessment.pdf",
+                                url: "/submissions/final-assessment.pdf",
+                            },
                         },
                         maxPoints: 100,
                         score: 88,
@@ -950,14 +994,14 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
                         name: "Mathematics Formula Sheet",
                         type: "document",
                         url: "/resources/math-formulas.pdf",
-                        dateAdded: "2024-09-15",
+                        dateAdded: "2024-09-10",
                     },
                 ],
             },
         ],
-        sessionDays: ["Friday"],
+        sessionDays: ["Tuesday", "Thursday"],
         from: "16:00",
-        to: "18:00",
-        duration: "2 hours",
+        to: "17:30",
+        duration: "1.5 hours",
     },
 ];

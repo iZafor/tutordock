@@ -29,7 +29,10 @@ export interface Task {
     submission?: {
         status: "submitted" | "draft" | null;
         date?: string;
-        file?: string;
+        file?: {
+            name: string;
+            url: string;
+        }
     };
     maxPoints?: number;
     score?: number;
