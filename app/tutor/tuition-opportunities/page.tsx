@@ -3,20 +3,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Plus, X } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { X } from "lucide-react";
 import { useState } from "react";
-import { tuitionOfferMockData as offers } from "@/lib/data";
+import { tuitionOfferMockDataForTutor as offers } from "@/lib/data";
 import TuitionOfferTable from "@/components/manage-tuition-offers/tuition-offer-table";
 import TuitionOfferDateRangeFilter from "@/components/manage-tuition-offers/tuition-offer-date-range-filter";
 import TuitionOfferWeekdayFilter from "@/components/manage-tuition-offers/tuition-offer-weekday-filter";
 import TuitionOfferTimeRangeFilter from "@/components/manage-tuition-offers/tuition-offer-time-range-filter";
-import TuitionOfferStatusFilter from "@/components/manage-tuition-offers/tuition-offer-status-filter";
 import TuitionOfferModeFilter from "@/components/manage-tuition-offers/tuition-offer-mode-filter";
 
-export default function ManageTuitionOffers() {
-    const pathname = usePathname();
-    const router = useRouter();
+export default function TuitionOpportunities() {
     const [searchQuery, setSearchQuery] = useState("");
     const [statusFilter, setStatusFilter] = useState("all-status");
     const [modeFilter, setModeFilter] = useState("all-modes");
@@ -99,18 +95,7 @@ export default function ManageTuitionOffers() {
     };
 
     return (
-        <div className="flex-1 space-y-6">
-            <div className="flex justify-end items-center">
-                <Button
-                    onClick={() =>
-                        router.push(pathname + "/create-tuition-offer")
-                    }
-                >
-                    <Plus className="mr-2 h-4 w-4" />
-                    Create Offer
-                </Button>
-            </div>
-
+        <div className="flex-1 space-y-6 mt-6">
             <Card>
                 <CardContent className="p-6">
                     <div className="flex flex-wrap gap-4">
@@ -136,11 +121,6 @@ export default function ManageTuitionOffers() {
                         <TuitionOfferTimeRangeFilter
                             timeRange={timeRange}
                             setTimeRange={setTimeRange}
-                        />
-
-                        <TuitionOfferStatusFilter
-                            statusFilter={statusFilter}
-                            setStatusFilter={setStatusFilter}
                         />
 
                         <TuitionOfferModeFilter

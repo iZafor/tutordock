@@ -1,4 +1,4 @@
-import DetailedTuitionOffer from "@/components/student/manage-tuition-offers/detailed-tuition-offer";
+import DetailedTuitionOffer from "@/components/manage-tuition-offers/detailed-tuition-offer";
 
 export default async function TuitionOfferDetails({
     params,

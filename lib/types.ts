@@ -81,6 +81,12 @@ export interface Schedule {
 
 export interface TuitionOffer {
     offerId: string;
+    student?: {
+        name: string;
+        grade: string;
+        rating: string;
+        address: string;
+    },
     budget: {
         amount: number;
         rateType: "hour" | "month" | "week";
@@ -89,7 +95,7 @@ export interface TuitionOffer {
     subjects: string[];
     schedule: Schedule;
     mode: "online" | "in-person" | "hybrid";
-    status: "pending" | "accepted" | "rejected" | "expired";
+    status?: "pending" | "accepted" | "rejected" | "expired";
 }
 
 export interface TuitionApplication {

@@ -1005,3 +1005,111 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
         duration: "1.5 hours",
     },
 ];
+
+export const tuitionOfferMockDataForTutor: TuitionOffer[] = [
+    {
+        offerId: "TO-2024-001",
+        student: {
+            name: "Saima Rahman",
+            grade: "Class 10",
+            rating: "4.8",
+            address: "House 15, Road 3, Block B, Banani, Dhaka-1213"
+        },
+        budget: {
+            amount: 3000,
+            rateType: "month"
+        },
+        startDate: "2025-01-15",
+        subjects: ["Mathematics", "Chemistry"],
+        schedule: {
+            weekdays: ["Monday", "Wednesday"],
+            startTime: "16:00",
+            endTime: "18:00"
+        },
+        mode: "online"
+    },
+    {
+        offerId: "TO-2024-002",
+        student: {
+            name: "Mehedi Hassan",
+            grade: "Class 8",
+            rating: "4.5",
+            address: "Flat 4A, House 27, Road 12, Uttara Sector 7, Dhaka-1230"
+        },
+        budget: {
+            amount: 2500,
+            rateType: "month"
+        },
+        startDate: "2025-02-01",
+        subjects: ["English", "Science"],
+        schedule: {
+            weekdays: ["Tuesday", "Thursday", "Saturday"],
+            startTime: "14:00",
+            endTime: "15:30"
+        },
+        mode: "in-person"
+    },
+    {
+        offerId: "TO-2024-003",
+        student: {
+            name: "Tasnia Ferdous",
+            grade: "Class 11",
+            rating: "4.9",
+            address: "House 45, Road 8/A, Dhanmondi, Dhaka-1209"
+        },
+        budget: {
+            amount: 4000,
+            rateType: "month"
+        },
+        startDate: "2025-01-20",
+        subjects: ["Physics", "Higher Mathematics"],
+        schedule: {
+            weekdays: ["Wednesday", "Friday"],
+            startTime: "17:00",
+            endTime: "19:00"
+        },
+        mode: "hybrid"
+    },
+    {
+        offerId: "TO-2024-004",
+        student: {
+            name: "Rafid Khan",
+            grade: "Class 9",
+            rating: "4.7",
+            address: "House 12, Block D, Bashundhara R/A, Dhaka-1229"
+        },
+        budget: {
+            amount: 3500,
+            rateType: "month"
+        },
+        startDate: "2025-02-05",
+        subjects: ["Bangla", "Mathematics"],
+        schedule: {
+            weekdays: ["Sunday", "Tuesday"],
+            startTime: "15:00",
+            endTime: "17:00"
+        },
+        mode: "in-person"
+    },
+    {
+        offerId: "TO-2024-005",
+        student: {
+            name: "Nabila Hossain",
+            grade: "Class 12",
+            rating: "4.6",
+            address: "Plot 7, Road 2, Block C, Gulshan-1, Dhaka-1212"
+        },
+        budget: {
+            amount: 4500,
+            rateType: "month"
+        },
+        startDate: "2025-01-25",
+        subjects: ["Chemistry", "Biology"],
+        schedule: {
+            weekdays: ["Monday", "Wednesday", "Thursday"],
+            startTime: "18:00",
+            endTime: "20:00"
+        },
+        mode: "hybrid"
+    }
+];
