@@ -6,11 +6,12 @@ import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
 import { useState } from "react";
 import { tuitionOfferMockDataForTutor as offers } from "@/lib/data";
-import TuitionOfferTable from "@/components/manage-tuition-offers/tuition-offer-table";
 import TuitionOfferDateRangeFilter from "@/components/manage-tuition-offers/tuition-offer-date-range-filter";
 import TuitionOfferWeekdayFilter from "@/components/manage-tuition-offers/tuition-offer-weekday-filter";
 import TuitionOfferTimeRangeFilter from "@/components/manage-tuition-offers/tuition-offer-time-range-filter";
 import TuitionOfferModeFilter from "@/components/manage-tuition-offers/tuition-offer-mode-filter";
+import DataTable from "@/components/ui/data-table";
+import { tuitionOpportunitiesTableColumns as columns } from "./columns";
 
 export default function TuitionOpportunities() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -141,7 +142,7 @@ export default function TuitionOpportunities() {
             </Card>
 
             <Card>
-                <TuitionOfferTable offers={filteredOffers} />
+                <DataTable data={filteredOffers} columns={columns} />
             </Card>
         </div>
     );

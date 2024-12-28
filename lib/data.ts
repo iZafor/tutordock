@@ -118,8 +118,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             date: "2024-12-21",
                             file: {
                                 name: "linear-algebra-quiz.pdf",
-                                url: "/submissions/linear-algebra-quiz.pdf"
-                            }
+                                url: "/submissions/linear-algebra-quiz.pdf",
+                            },
                         },
                         maxPoints: 50,
                         score: 42,
@@ -173,8 +173,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             date: "2024-12-16",
                             file: {
                                 name: "thermodynamics-problems.pdf",
-                                url: "/submissions/thermodynamics-problems.pdf"
-                            }
+                                url: "/submissions/thermodynamics-problems.pdf",
+                            },
                         },
                         maxPoints: 75,
                         score: 68,
@@ -289,8 +289,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             date: "2024-12-19",
                             file: {
                                 name: "genetics-project.pdf",
-                                url: "/submissions/genetics-project.pdf"
-                            }
+                                url: "/submissions/genetics-project.pdf",
+                            },
                         },
                         maxPoints: 100,
                         score: 90,
@@ -344,8 +344,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             date: "2024-12-21",
                             file: {
                                 name: "analytical-essay.pdf",
-                                url: "/submissions/analytical-essay.pdf"
-                            }
+                                url: "/submissions/analytical-essay.pdf",
+                            },
                         },
                         maxPoints: 100,
                         score: 95,
@@ -362,8 +362,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             date: "2024-12-16",
                             file: {
                                 name: "grammar-assessment.pdf",
-                                url: "/submissions/grammar-assessment.pdf"
-                            }
+                                url: "/submissions/grammar-assessment.pdf",
+                            },
                         },
                         maxPoints: 50,
                         score: 48,
@@ -403,8 +403,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             date: "2024-12-24",
                             file: {
                                 name: "shakespeare-analysis.pdf",
-                                url: "/submissions/shakespeare-analysis.pdf"
-                            }
+                                url: "/submissions/shakespeare-analysis.pdf",
+                            },
                         },
                         maxPoints: 100,
                         score: 92,
@@ -445,8 +445,8 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
                             date: "2024-12-16",
                             file: {
                                 name: "calculus-final.pdf",
-                                url: "/submissions/calculus-final.pdf"
-                            }
+                                url: "/submissions/calculus-final.pdf",
+                            },
                         },
                         maxPoints: 100,
                         score: 88,
@@ -1013,20 +1013,20 @@ export const tuitionOfferMockDataForTutor: TuitionOffer[] = [
             name: "Saima Rahman",
             grade: "Class 10",
             rating: "4.8",
-            address: "House 15, Road 3, Block B, Banani, Dhaka-1213"
+            address: "House 15, Road 3, Block B, Banani, Dhaka-1213",
         },
         budget: {
             amount: 3000,
-            rateType: "month"
+            rateType: "month",
         },
         startDate: "2025-01-15",
         subjects: ["Mathematics", "Chemistry"],
         schedule: {
             weekdays: ["Monday", "Wednesday"],
             startTime: "16:00",
-            endTime: "18:00"
+            endTime: "18:00",
         },
-        mode: "online"
+        mode: "online",
     },
     {
         offerId: "TO-2024-002",
@@ -1034,20 +1034,20 @@ export const tuitionOfferMockDataForTutor: TuitionOffer[] = [
             name: "Mehedi Hassan",
             grade: "Class 8",
             rating: "4.5",
-            address: "Flat 4A, House 27, Road 12, Uttara Sector 7, Dhaka-1230"
+            address: "Flat 4A, House 27, Road 12, Uttara Sector 7, Dhaka-1230",
         },
         budget: {
             amount: 2500,
-            rateType: "month"
+            rateType: "month",
         },
         startDate: "2025-02-01",
         subjects: ["English", "Science"],
         schedule: {
             weekdays: ["Tuesday", "Thursday", "Saturday"],
             startTime: "14:00",
-            endTime: "15:30"
+            endTime: "15:30",
         },
-        mode: "in-person"
+        mode: "in-person",
     },
     {
         offerId: "TO-2024-003",
@@ -1055,20 +1055,20 @@ export const tuitionOfferMockDataForTutor: TuitionOffer[] = [
             name: "Tasnia Ferdous",
             grade: "Class 11",
             rating: "4.9",
-            address: "House 45, Road 8/A, Dhanmondi, Dhaka-1209"
+            address: "House 45, Road 8/A, Dhanmondi, Dhaka-1209",
         },
         budget: {
             amount: 4000,
-            rateType: "month"
+            rateType: "month",
         },
         startDate: "2025-01-20",
         subjects: ["Physics", "Higher Mathematics"],
         schedule: {
             weekdays: ["Wednesday", "Friday"],
             startTime: "17:00",
-            endTime: "19:00"
+            endTime: "19:00",
         },
-        mode: "hybrid"
+        mode: "hybrid",
     },
     {
         offerId: "TO-2024-004",
@@ -1076,20 +1076,20 @@ export const tuitionOfferMockDataForTutor: TuitionOffer[] = [
             name: "Rafid Khan",
             grade: "Class 9",
             rating: "4.7",
-            address: "House 12, Block D, Bashundhara R/A, Dhaka-1229"
+            address: "House 12, Block D, Bashundhara R/A, Dhaka-1229",
         },
         budget: {
             amount: 3500,
-            rateType: "month"
+            rateType: "month",
         },
         startDate: "2025-02-05",
         subjects: ["Bangla", "Mathematics"],
         schedule: {
             weekdays: ["Sunday", "Tuesday"],
             startTime: "15:00",
-            endTime: "17:00"
+            endTime: "17:00",
         },
-        mode: "in-person"
+        mode: "in-person",
     },
     {
         offerId: "TO-2024-005",
@@ -1097,19 +1097,132 @@ export const tuitionOfferMockDataForTutor: TuitionOffer[] = [
             name: "Nabila Hossain",
             grade: "Class 12",
             rating: "4.6",
-            address: "Plot 7, Road 2, Block C, Gulshan-1, Dhaka-1212"
+            address: "Plot 7, Road 2, Block C, Gulshan-1, Dhaka-1212",
         },
         budget: {
             amount: 4500,
-            rateType: "month"
+            rateType: "month",
         },
         startDate: "2025-01-25",
         subjects: ["Chemistry", "Biology"],
         schedule: {
             weekdays: ["Monday", "Wednesday", "Thursday"],
             startTime: "18:00",
-            endTime: "20:00"
+            endTime: "20:00",
         },
-        mode: "hybrid"
-    }
+        mode: "hybrid",
+    },
+];
+
+export const tuitionOfferMockDataForTutorApplied: TuitionOffer[] = [
+    {
+        offerId: "TO-2024-001",
+        student: {
+            name: "Rahima Akter",
+            grade: "Class 9",
+            rating: "4.8",
+            address: "Block C, Bashundhara R/A, Dhaka",
+        },
+        budget: {
+            amount: 3000,
+            rateType: "month",
+        },
+        startDate: "2024-01-15",
+        subjects: ["Mathematics", "Physics"],
+        schedule: {
+            weekdays: ["Saturday", "Monday"],
+            startTime: "16:00",
+            endTime: "18:00",
+        },
+        mode: "in-person",
+        status: "pending",
+    },
+    {
+        offerId: "TO-2024-002",
+        student: {
+            name: "Abdul Karim",
+            grade: "Class 5",
+            rating: "4.5",
+            address: "Road 27, Dhanmondi, Dhaka",
+        },
+        budget: {
+            amount: 500,
+            rateType: "hour",
+        },
+        startDate: "2024-01-20",
+        subjects: ["English", "Science"],
+        schedule: {
+            weekdays: ["Sunday", "Wednesday"],
+            startTime: "14:00",
+            endTime: "16:00",
+        },
+        mode: "hybrid",
+        status: "accepted",
+    },
+    {
+        offerId: "TO-2024-003",
+        student: {
+            name: "Tasnim Islam",
+            grade: "HSC 1st Year",
+            rating: "4.9",
+            address: "Uttara Sector 7, Dhaka",
+        },
+        budget: {
+            amount: 800,
+            rateType: "hour",
+        },
+        startDate: "2024-02-01",
+        subjects: ["Chemistry", "Biology"],
+        schedule: {
+            weekdays: ["Tuesday", "Friday"],
+            startTime: "17:00",
+            endTime: "19:00",
+        },
+        mode: "online",
+        status: "rejected",
+    },
+    {
+        offerId: "TO-2024-004",
+        student: {
+            name: "Mohammad Hassan",
+            grade: "Class 10",
+            rating: "4.7",
+            address: "Gulshan-2, Road 55, Dhaka",
+        },
+        budget: {
+            amount: 4500,
+            rateType: "month",
+        },
+        startDate: "2024-01-25",
+        subjects: ["Higher Math", "Chemistry"],
+        schedule: {
+            weekdays: ["Saturday", "Monday", "Wednesday"],
+            startTime: "15:00",
+            endTime: "17:00",
+        },
+        mode: "in-person",
+        status: "pending",
+    },
+    {
+        offerId: "TO-2024-005",
+        student: {
+            name: "Fatima Begum",
+            grade: "Class 4",
+            rating: "4.6",
+            address: "Mirpur DOHS, Road 12, Dhaka",
+        },
+        budget: {
+            amount: 2500,
+            rateType: "month",
+        },
+        startDate: "2024-02-05",
+        subjects: ["Mathematics", "Bangla"],
+        schedule: {
+            weekdays: ["Sunday", "Tuesday"],
+            startTime: "14:30",
+            endTime: "16:30",
+        },
+        mode: "hybrid",
+        status: "pending",
+    },
 ];

@@ -32,7 +32,7 @@ export interface Task {
         file?: {
             name: string;
             url: string;
-        }
+        };
     };
     maxPoints?: number;
     score?: number;
@@ -79,23 +79,27 @@ export interface Schedule {
     endTime: string;
 }
 
+export interface StudentInfo {
+    name: string;
+    grade: string;
+    rating: string;
+    address: string;
+}
+
+export interface Budget {
+    amount: number;
+    rateType: "hour" | "month" | "week";
+}
+
 export interface TuitionOffer {
     offerId: string;
-    student?: {
-        name: string;
-        grade: string;
-        rating: string;
-        address: string;
-    },
-    budget: {
-        amount: number;
-        rateType: "hour" | "month" | "week";
-    };
+    student?: StudentInfo;
+    budget: Budget;
     startDate: string;
     subjects: string[];
     schedule: Schedule;
     mode: "online" | "in-person" | "hybrid";
-    status?: "pending" | "accepted" | "rejected" | "expired";
+    status?: "pending" | "accepted" | "rejected";
 }
 
 export interface TuitionApplication {

@@ -15,7 +15,6 @@ export default function TuitionOfferStatusFilter({statusFilter, setStatusFilter}
                 <SelectItem value="pending">Pending</SelectItem>
                 <SelectItem value="accepted">Accepted</SelectItem>
                 <SelectItem value="rejected">Rejected</SelectItem>
-                <SelectItem value="expired">Expired</SelectItem>
             </SelectContent>
         </Select>
     );

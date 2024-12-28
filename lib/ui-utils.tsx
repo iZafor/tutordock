@@ -1,4 +1,5 @@
-import { Clock4, CheckCircle2, Clock, XCircle } from "lucide-react";
+import { Clock4, CheckCircle2, Clock, XCircle, LucideIcon } from "lucide-react";
+import { TuitionOffer } from "./types";
 
 export const getStatusBadgeVariant = (status: string) => {
     switch (status) {
@@ -28,4 +29,10 @@ export const getStatusIcon = (status: string) => {
         default:
             return null;
     }
+};
+
+export type RowAction<T = TuitionOffer> = {
+    name: string;
+    icon: LucideIcon;
+    onClick?: (data: T) => void;
 };

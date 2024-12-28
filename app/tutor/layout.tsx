@@ -30,7 +30,7 @@ const routes = [
             },
             {
                 title: "My Applications",
-                url: ROUTE_ROOT + "/tuition-opportunities/applications",
+                url: ROUTE_ROOT + "/my-applications",
                 description:
                     "Track your offer applications and their current status",
             },
