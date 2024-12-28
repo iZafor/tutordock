@@ -14,6 +14,7 @@ import { _24HourToAmPm } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
 import { Calendar, Ellipsis, Eye, Monitor, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
 export const myApplicationsTableColumns: ColumnDef<TuitionOffer>[] = [
     {
@@ -126,6 +127,10 @@ export const myApplicationsTableColumns: ColumnDef<TuitionOffer>[] = [
         id: "actions",
         header: "Actions",
         cell: ({ row }) => {
+            const { offerId, status } = row.original;
+            const pathname = usePathname();
+            const router = useRouter();
+
             return (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -134,14 +139,20 @@ export const myApplicationsTableColumns: ColumnDef<TuitionOffer>[] = [
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                        <DropdownMenuItem>
+                        <DropdownMenuItem
+                            onClick={() =>
+                                router.push(pathname + `/${offerId}`)
+                            }
+                        >
                             <Eye className="mr-2 size-4" />
                             View Details
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="text-destructive">
-                            <X className="mr-2 size-4" />
-                            Cancel
-                        </DropdownMenuItem>
+                        {status === "pending" && (
+                            <DropdownMenuItem className="text-destructive">
+                                <X className="mr-2 size-4" />
+                                Cancel
+                            </DropdownMenuItem>
+                        )}
                     </DropdownMenuContent>
                 </DropdownMenu>
             );

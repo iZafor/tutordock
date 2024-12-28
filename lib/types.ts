@@ -91,14 +91,22 @@ export interface Budget {
     rateType: "hour" | "month" | "week";
 }
 
+export type TuitionMode = "online" | "in-person" | "hybrid";
+
 export interface TuitionOffer {
     offerId: string;
     student?: StudentInfo;
     budget: Budget;
+    preferredBudget?: Budget;
     startDate: string;
+    applicationDate?: string;
+    acceptedDate?: string;
+    rejectedDate?: string;
     subjects: string[];
     schedule: Schedule;
-    mode: "online" | "in-person" | "hybrid";
+    preferredSchedule?: Schedule;
+    mode: TuitionMode;
+    preferredMode?: TuitionMode;
     status?: "pending" | "accepted" | "rejected";
 }
 
