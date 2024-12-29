@@ -6,10 +6,10 @@ import {
     CalendarIcon,
     MapPin,
     Monitor,
-    Users,
     Calendar,
     X,
     BookOpen,
+    GraduationCap,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { tuitionOfferMockDataForTutorApplied as offers } from "@/lib/data";
@@ -54,7 +54,7 @@ export default function DetailedAppliedTuitionOffer({
             <div className="flex items-center justify-between bg-card p-6 rounded-lg border">
                 <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Users className="w-6 h-6 text-primary" />
+                        <GraduationCap className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                         <div className="flex items-center gap-3 mb-1">
@@ -85,7 +85,7 @@ export default function DetailedAppliedTuitionOffer({
                     {offer.status === "pending" && (
                         <Button variant="destructive">
                             <X className="size-4" />
-                            Cancel Offer
+                            Cancel Application
                         </Button>
                     )}
                 </div>
