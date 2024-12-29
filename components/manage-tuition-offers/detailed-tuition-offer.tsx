@@ -29,12 +29,12 @@ export default function DetailedTuitionOffer({ offerId }: { offerId: string }) {
                             {offerData.subjects.join(", ")}
                         </h3>
                         <Badge
-                            variant={getStatusBadgeVariant(offerData.status)}
+                            variant={getStatusBadgeVariant(offerData.status!)}
                             className="flex w-fit items-center gap-1"
                         >
-                            {getStatusIcon(offerData.status)}
-                            {offerData.status.charAt(0).toUpperCase() +
-                                offerData.status.slice(1)}
+                            {getStatusIcon(offerData.status!)}
+                            {offerData.status!.charAt(0).toUpperCase() +
+                                offerData.status!.slice(1)}
                         </Badge>
                     </div>
                 </CardHeader>

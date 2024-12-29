@@ -1,11 +1,6 @@
 "use client";
 
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
 import { tuitionDetailsMockData } from "@/lib/data";
 import { calculateSubjectProgressData } from "@/lib/student-analytics-util";
@@ -32,11 +27,11 @@ export default function StudentSubjectProgressBarChart({
 }: {
     className?: string;
 }) {
-    const allSubjects = new Set(
-        tuitionDetailsMockData.flatMap((t) => t.subjects.map((s) => s.name))
-    )
-        .values()
-        .toArray();
+    const allSubjects = Array.from(
+        new Set(
+            tuitionDetailsMockData.flatMap((t) => t.subjects.map((s) => s.name))
+        ).values()
+    );
 
     const [selectedSubjects, setSelectedSubjects] = useState<string[]>(
         allSubjects.slice(0, 5)

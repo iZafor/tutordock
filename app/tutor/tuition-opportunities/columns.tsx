@@ -113,36 +113,37 @@ export const tuitionOpportunitiesTableColumns: ColumnDef<TuitionOffer>[] = [
     {
         id: "actions",
         header: "Actions",
-        cell: ({ row }) => {
-            const offer = row.original;
-            const [open, setOpen] = useState(false);
-
-            return (
-                <>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon">
-                                <Ellipsis className="h-4 w-4" />
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent>
-                            <DropdownMenuItem onClick={() => setOpen(true)}>
-                                <SendHorizontal className="mr-2 size-4" />
-                                Apply
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <Bookmark className="mr-2 size-4" />
-                                Shortlist
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                    <TuitionOfferApplicationForm
-                        offer={offer}
-                        open={open}
-                        setOpen={setOpen}
-                    />
-                </>
-            );
-        },
+        cell: ({ row }) => <Actions offer={row.original} />,
     },
 ];
+
+function Actions({ offer }: { offer: TuitionOffer }) {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <>
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                        <Ellipsis className="h-4 w-4" />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                    <DropdownMenuItem onClick={() => setOpen(true)}>
+                        <SendHorizontal className="mr-2 size-4" />
+                        Apply
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Bookmark className="mr-2 size-4" />
+                        Shortlist
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+            <TuitionOfferApplicationForm
+                offer={offer}
+                open={open}
+                setOpen={setOpen}
+            />
+        </>
+    );
+}

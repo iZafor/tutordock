@@ -56,7 +56,6 @@ export function calculateSubjectProgressData(
         tuition.subjects.forEach((subject) => {
             const name = subject.name;
             if (subjects.includes(name)) {
-                const tasks = subject.tasks.length;
                 let progress = 0;
                 let completedTasks = 0;
 

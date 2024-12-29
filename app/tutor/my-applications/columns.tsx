@@ -126,36 +126,35 @@ export const myApplicationsTableColumns: ColumnDef<TuitionOffer>[] = [
     {
         id: "actions",
         header: "Actions",
-        cell: ({ row }) => {
-            const { offerId, status } = row.original;
-            const pathname = usePathname();
-            const router = useRouter();
-
-            return (
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon">
-                            <Ellipsis className="h-4 w-4" />
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                        <DropdownMenuItem
-                            onClick={() =>
-                                router.push(pathname + `/${offerId}`)
-                            }
-                        >
-                            <Eye className="mr-2 size-4" />
-                            View Details
-                        </DropdownMenuItem>
-                        {status === "pending" && (
-                            <DropdownMenuItem className="text-destructive">
-                                <X className="mr-2 size-4" />
-                                Cancel
-                            </DropdownMenuItem>
-                        )}
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            );
-        },
+        cell: ({ row }) => <Actions offer={row.original} />,
     },
 ];
+
+function Actions({ offer }: { offer: TuitionOffer }) {
+    const pathname = usePathname();
+    const router = useRouter();
+
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                    <Ellipsis className="h-4 w-4" />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+                <DropdownMenuItem
+                    onClick={() => router.push(pathname + `/${offer.offerId}`)}
+                >
+                    <Eye className="mr-2 size-4" />
+                    View Details
+                </DropdownMenuItem>
+                {offer.status === "pending" && (
+                    <DropdownMenuItem className="text-destructive">
+                        <X className="mr-2 size-4" />
+                        Cancel
+                    </DropdownMenuItem>
+                )}
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+}

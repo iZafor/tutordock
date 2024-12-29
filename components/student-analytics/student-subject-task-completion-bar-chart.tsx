@@ -31,11 +31,11 @@ export default function StudentSubjectTaskCompletionBarChart({
 }: {
     className?: string;
 }) {
-    const allSubjects = new Set(
-        tuitionDetailsMockData.flatMap((t) => t.subjects.map((s) => s.name))
-    )
-        .values()
-        .toArray();
+    const allSubjects = Array.from(
+        new Set(
+            tuitionDetailsMockData.flatMap((t) => t.subjects.map((s) => s.name))
+        ).values()
+    );
 
     const [selectedSubjects, setSelectedSubjects] = useState<string[]>(
         allSubjects.slice(0, 5)
