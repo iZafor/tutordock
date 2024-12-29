@@ -128,3 +128,26 @@ export interface TuitionApplication {
     preferredSchedule?: Schedule;
     preferredMode?: "online" | "in-person" | "hybrid";
 }
+
+export interface StudentAnalyticsOverviewData {
+    averageProgress: number;
+    totalSubjects: number;
+    totalTuitions: number;
+    totalTasks: number;
+}
+
+export interface StudentAnalyticsSubjectProgressData {
+    subject: string;
+    overallProgress: number;
+}
+
+export interface StudentAnalyticsSubjectTaskCompletionData {
+    subject: string;
+    totalTasks: number;
+    completedTasks: number;
+}
+
+export interface DateRange {
+    from: Date | undefined;
+    to: Date | undefined;
+}

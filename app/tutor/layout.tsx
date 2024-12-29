@@ -36,10 +36,6 @@ const routes = [
             },
         ],
     },
-    {
-        title: "Analytics",
-        url: ROUTE_ROOT + "/analytics",
-    },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
