@@ -11,18 +11,18 @@ export const tuitionMockData: Tuition[] = [
         subjects: [
             {
                 name: "Mathematics",
-                totalTasks: 20,
-                completedTasks: 15,
+                totalTasks: 2,
+                completedTasks: 1,
             },
             {
                 name: "Physics",
-                totalTasks: 15,
-                completedTasks: 10,
+                totalTasks: 2,
+                completedTasks: 1,
             },
         ],
         tutor: "Dr. Smith",
-        totalTasks: 20,
-        completedTasks: 15,
+        totalTasks: 4,
+        completedTasks: 2,
         sessionDays: ["Monday", "Wednesday"],
         from: "10:00 AM",
         to: "12:00 PM",
@@ -34,18 +34,18 @@ export const tuitionMockData: Tuition[] = [
         subjects: [
             {
                 name: "Chemistry",
-                totalTasks: 18,
-                completedTasks: 8,
+                totalTasks: 2,
+                completedTasks: 0,
             },
             {
                 name: "Biology",
-                totalTasks: 15,
-                completedTasks: 12,
+                totalTasks: 2,
+                completedTasks: 1,
             },
         ],
         tutor: "Prof. Johnson",
-        totalTasks: 15,
-        completedTasks: 8,
+        totalTasks: 4,
+        completedTasks: 1,
         sessionDays: ["Sunday", "Tuesday"],
         from: "1:00 PM",
         to: "2:30 PM",
@@ -57,23 +57,23 @@ export const tuitionMockData: Tuition[] = [
         subjects: [
             {
                 name: "English",
-                totalTasks: 18,
-                completedTasks: 18,
+                totalTasks: 2,
+                completedTasks: 2,
             },
             {
                 name: "Literature",
-                totalTasks: 15,
-                completedTasks: 15,
+                totalTasks: 1,
+                completedTasks: 1,
             },
             {
                 name: "Mathematics",
-                totalTasks: 20,
-                completedTasks: 20,
+                totalTasks: 1,
+                completedTasks: 1,
             },
         ],
         tutor: "Dr. Williams",
-        totalTasks: 18,
-        completedTasks: 18,
+        totalTasks: 4,
+        completedTasks: 4,
         sessionDays: ["Friday", "Saturday"],
         from: "4:00 PM",
         to: "6:00 PM",
@@ -89,7 +89,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "math-101",
                 name: "Mathematics",
-                progress: 75,
                 tasks: [
                     {
                         id: "task-math-1",
@@ -145,7 +144,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "physics-101",
                 name: "Physics",
-                progress: 67,
                 tasks: [
                     {
                         id: "task-physics-1",
@@ -214,7 +212,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "chem-101",
                 name: "Chemistry",
-                progress: 44,
                 tasks: [
                     {
                         id: "task-chem-1",
@@ -261,7 +258,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "bio-101",
                 name: "Biology",
-                progress: 80,
                 tasks: [
                     {
                         id: "task-bio-1",
@@ -330,7 +326,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "eng-101",
                 name: "English",
-                progress: 100,
                 tasks: [
                     {
                         id: "task-eng-1",
@@ -389,7 +384,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "lit-101",
                 name: "Literature",
-                progress: 100,
                 tasks: [
                     {
                         id: "task-lit-1",
@@ -430,7 +424,6 @@ export const tuitionDetailsMockData: TuitionDetails[] = [
             {
                 id: "math-102",
                 name: "Mathematics",
-                progress: 100,
                 tasks: [
                     {
                         id: "task-math-3",
@@ -660,11 +653,19 @@ export const tuitionMockDataForTutor: Tuition[] = [
         id: "tuition-1",
         student: "John Smith",
         subjects: [
-            { name: "Mathematics", totalTasks: 10, completedTasks: 7 },
-            { name: "Physics", totalTasks: 8, completedTasks: 5 },
+            {
+                name: "Mathematics",
+                totalTasks: 2,
+                completedTasks: 1,
+            },
+            {
+                name: "Physics",
+                totalTasks: 2,
+                completedTasks: 1,
+            },
         ],
-        totalTasks: 18,
-        completedTasks: 12,
+        totalTasks: 4,
+        completedTasks: 2,
         sessionDays: ["Monday", "Wednesday"],
         from: "10:00 AM",
         to: "12:00 PM",
@@ -677,11 +678,19 @@ export const tuitionMockDataForTutor: Tuition[] = [
         id: "tuition-2",
         student: "Emily Chen",
         subjects: [
-            { name: "Chemistry", totalTasks: 12, completedTasks: 5 },
-            { name: "Biology", totalTasks: 15, completedTasks: 9 },
+            {
+                name: "Chemistry",
+                totalTasks: 2,
+                completedTasks: 0,
+            },
+            {
+                name: "Biology",
+                totalTasks: 2,
+                completedTasks: 1,
+            },
         ],
-        totalTasks: 27,
-        completedTasks: 14,
+        totalTasks: 4,
+        completedTasks: 1,
         sessionDays: ["Tuesday", "Thursday"],
         from: "2:00 PM",
         to: "3:30 PM",
@@ -694,12 +703,24 @@ export const tuitionMockDataForTutor: Tuition[] = [
         id: "tuition-3",
         student: "Sarah Williams",
         subjects: [
-            { name: "English", totalTasks: 8, completedTasks: 8 },
-            { name: "Literature", totalTasks: 6, completedTasks: 6 },
-            { name: "Mathematics", totalTasks: 10, completedTasks: 10 },
+            {
+                name: "English",
+                totalTasks: 2,
+                completedTasks: 2,
+            },
+            {
+                name: "Literature",
+                totalTasks: 1,
+                completedTasks: 1,
+            },
+            {
+                name: "Mathematics",
+                totalTasks: 1,
+                completedTasks: 1,
+            },
         ],
-        totalTasks: 24,
-        completedTasks: 24,
+        totalTasks: 4,
+        completedTasks: 4,
         sessionDays: ["Friday"],
         from: "4:00 PM",
         to: "6:00 PM",
@@ -721,7 +742,6 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
             {
                 id: "math-11",
                 name: "Mathematics",
-                progress: 70,
                 tasks: [
                     {
                         id: "math-task-1",
@@ -776,7 +796,6 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
             {
                 id: "physics-11",
                 name: "Physics",
-                progress: 62.5,
                 tasks: [
                     {
                         id: "physics-task-1",
@@ -819,7 +838,6 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
             {
                 id: "chem-12",
                 name: "Chemistry",
-                progress: 41.6,
                 tasks: [
                     {
                         id: "chem-task-1",
@@ -848,7 +866,6 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
             {
                 id: "bio-12",
                 name: "Biology",
-                progress: 60,
                 tasks: [
                     {
                         id: "bio-task-1",
@@ -897,7 +914,6 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
             {
                 id: "eng-10",
                 name: "English",
-                progress: 100,
                 tasks: [
                     {
                         id: "eng-task-1",
@@ -931,7 +947,6 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
             {
                 id: "lit-10",
                 name: "Literature",
-                progress: 100,
                 tasks: [
                     {
                         id: "lit-task-1",
@@ -966,7 +981,6 @@ export const tuitionDetailsMockDataForTutor: TuitionDetails[] = [
             {
                 id: "math-10",
                 name: "Mathematics",
-                progress: 100,
                 tasks: [
                     {
                         id: "math-task-3",

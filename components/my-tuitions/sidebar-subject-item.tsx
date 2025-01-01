@@ -1,4 +1,5 @@
 import { Progress } from "@/components/ui/progress";
+import { calculateSubjectTaskProgress } from "@/lib/student-analytics-util";
 import { Subject } from "@/lib/types";
 import { BookMarked } from "lucide-react";
 
@@ -28,7 +29,10 @@ export default function SidebarSubjectItem({
                         {subject.tasks.length} tasks
                     </div>
                 </div>
-                <Progress value={subject.progress} className="w-12 h-1" />
+                <Progress
+                    value={calculateSubjectTaskProgress(subject)}
+                    className="w-12 h-1"
+                />
             </div>
         </button>
     );

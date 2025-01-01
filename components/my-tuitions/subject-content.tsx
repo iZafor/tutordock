@@ -47,6 +47,7 @@ import { format } from "date-fns";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { useRef, useState } from "react";
+import { calculateSubjectTaskProgress } from "@/lib/student-analytics-util";
 
 export default function SubjectContent({ subject }: { subject: Subject }) {
     const [activeTab, setActiveTab] = useState("tasks");
@@ -84,7 +85,7 @@ export default function SubjectContent({ subject }: { subject: Subject }) {
                 </div>
                 <div className="text-right">
                     <div className="text-2xl font-bold">
-                        {subject.progress}%
+                        {calculateSubjectTaskProgress(subject)}%
                     </div>
                     <div className="text-sm text-muted-foreground">
                         Complete

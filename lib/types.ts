@@ -51,7 +51,6 @@ export interface Subject {
     name: string;
     tasks: Task[];
     resources: Resource[];
-    progress: number;
 }
 
 export interface TuitionDetails {

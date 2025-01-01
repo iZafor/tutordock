@@ -3,6 +3,7 @@ import {
     StudentAnalyticsOverviewData,
     StudentAnalyticsSubjectProgressData,
     StudentAnalyticsSubjectTaskCompletionData,
+    Subject,
     TuitionDetails,
 } from "./types";
 
@@ -38,6 +39,14 @@ export function calculateOverviewData(
         totalTuitions,
         totalTasks,
     };
+}
+
+export function calculateSubjectTaskProgress(subject: Subject) {
+    const assignedTasks = subject.tasks.length;
+    const completedTasks = subject.tasks.filter(
+        (task) => task.status === "completed"
+    ).length;
+    return Math.round((completedTasks / assignedTasks) * 100) || 0;
 }
 
 export function calculateSubjectProgressData(
